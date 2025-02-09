@@ -28,13 +28,20 @@ class SetPopup(Popup):
 
 
 class LibraryScreen(Screen):
+
+    def __init__(self, **kw):
+        super().__init__(**kw)
+
+        self.current_books = []
+        self.show = []
+
     def search_book(self):
         popup = SetPopup()
         popup.open()
         popup.bind(on_dismiss=lambda instance: self.handle_search_results(self.search_books(popup.set_values())))
 
-
-    def search_books(self, books_settings):
+    @staticmethod
+    def search_books(books_settings):
         conn = psycopg2.connect(
             database="Technical_Literature",
             user="postgres",
@@ -89,13 +96,36 @@ class LibraryScreen(Screen):
 
         return books
 
+    def show_books(self):
+        if self.show:
+            titles = [title + "  " + str(year) + "y." for title, year in self.show]
+        else:
+            titles = [title + "  " + str(year) + "y." for title, year in self.current_books]
+        self.ids.scroll.text = "\n\n".join(titles[:300]) if titles != [] else "Not Found"
+
     def handle_search_results(self, books):
         quiry = self.ids.search_quiry.text
         pattern = r".*" + quiry + ".*"
 
-        current_books = [title for title, year in books if re.match(pattern, title)]
+        self.current_books = [[title, year] for title, year in books if re.match(pattern, title)]
+        self.show_books()
 
-        self.ids.scroll.text = "\n\n".join(current_books[:300])
+    def sort_by(self):
+        mode = self.ids.sort_by.text
+
+        if "None" in mode:
+            self.ids.sort_by.text = "Sort by: Year"
+            self.show = sorted(self.current_books, key=lambda year: year[1])
+        elif "Year" in mode:
+            self.ids.sort_by.text = "Sort by: Title"
+            self.show = sorted(self.current_books, key=lambda title: title[0])
+        elif "Title" in mode:
+            self.ids.sort_by.text = "Sort by: None"
+            self.show = self.current_books
+        else:
+            print("Can't sort!")
+
+        self.show_books()
 
 
 class AddScreen(Screen):

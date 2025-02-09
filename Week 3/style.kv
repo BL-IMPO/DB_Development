@@ -65,6 +65,8 @@ BoxLayout:
 
 
     BoxLayout:
+        padding: 10
+        spacing: 20
         orientation: "vertical"
 
         # Author
@@ -129,6 +131,9 @@ BoxLayout:
                 size: self.size
                 pos: self.pos
 
+        padding: 10
+        spacing: 20
+
         # Top BoxLayout (Search Bar)
         BoxLayout:
             padding: 10
@@ -153,15 +158,27 @@ BoxLayout:
         # Content Label (below the search bar)
         Label:
             text: "Books:"
-            size_hint: 1, None  # Full width, fixed height
+            size_hint: 0.1, None  # Full width, fixed height
+            font_size: 24
+            height: "30dp"
+            pos_hint: {"top": 0.85}  # Position just below the search bar
+            color: 0, 0, 0, 1
+
+        Button:
+            id: sort_by
+            text: "Sort by: None"
+            size_hint: 0.2, None  # Full width, fixed height
             height: "30dp"
             pos_hint: {"top": 0.9}  # Position just below the search bar
             color: 0, 0, 0, 1
+            background_color: 0.96, 0.96, 0.65, 1
+            on_release: root.sort_by()
+
 
         # Scrollable Content Area
         ScrollView:
             size_hint: 1, 0.8  # Take up most of the remaining screen
-            pos_hint: {"top": 0.85}  # Position below the label
+            pos_hint: {"left": 0.80}  # Position below the label
 
             Label:
                 id: scroll
@@ -169,7 +186,7 @@ BoxLayout:
                 height: self.texture_size[1]
                 text_size: self.width, None
                 padding: 10, 10
-                text: "Empty"
+                text: "Not Found"
                 color: 0, 0, 0, 1
 
 <AddScreen>:
