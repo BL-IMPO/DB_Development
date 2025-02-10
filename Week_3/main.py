@@ -102,7 +102,7 @@ class LibraryScreen(Screen):
 
     def show_books(self):
         if self.show:
-            titles = [title + "  " + str(year) + "y. " + str(pages) + "p." for genre, title, year, pages in self.show]
+            titles = [f"[{genre}]| {title}  {year}y.  {pages}p." for genre, title, year, pages in self.show]
         else:
             titles = [f"[{genre}]| {title}  {year}y.  {pages}p." for genre, title, year, pages in self.current_books]
         self.ids.scroll.text = "\n\n".join(titles[:275]) if titles != [] else "Not Found"
