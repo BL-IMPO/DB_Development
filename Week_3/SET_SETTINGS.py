@@ -1,4 +1,7 @@
+# Local module
+
 DEFAULT_AUTHOR = "ALL"
 DEFAULT_GENRE = "ALL"
 YEAR_FROM = "1900"
 YEAR_TO = "2025"
+

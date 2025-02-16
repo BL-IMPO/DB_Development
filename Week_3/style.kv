@@ -4,7 +4,7 @@
 BoxLayout:
     orientation: "horizontal"
 
-    # Левая панель навигации
+    # Left navigation panel
     BoxLayout:
         orientation: "vertical"
         size_hint: 0.3, 1
@@ -21,24 +21,48 @@ BoxLayout:
 
         Button:
             text: "Library"
+            font_size: 18
+            bold: True
+            color: 0, 0, 0, 1
+            background_color: 0.96, 0.85, 0.40, 1  # Warm gold button color
+            background_normal: ""  # Removes default texture
+            border: (10, 10, 10, 10)
             on_release: app.root.ids.screen_manager.current = "library"
             size_hint: 1, 0.2
-            color: 0, 0, 0, 1
-            background_color: 0.96, 0.96, 0.65, 1
 
         Button:
             text: "Add Book"
+            font_size: 18
+            bold: True
+            color: 0, 0, 0, 1
+            background_color: 0.96, 0.85, 0.40, 1  # Warm gold button color
+            background_normal: ""  # Removes default texture
+            border: (10, 10, 10, 10)
             on_release: app.root.ids.screen_manager.current = "add"
             size_hint: 1, 0.2
+
+        Button:
+            text: "Delete"
+            font_size: 18
+            bold: True
             color: 0, 0, 0, 1
-            background_color: 0.96, 0.96, 0.65, 1
+            background_color: 0.96, 0.85, 0.40, 1  # Warm gold button color
+            background_normal: ""  # Removes default texture
+            border: (10, 10, 10, 10)
+            on_release: app.root.ids.screen_manager.current = "delete"
+            size_hint: 1, 0.2
 
         Button:
             text: "Settings"
+            font_size: 18
+            bold: True
+            color: 0, 0, 0, 1
+            background_color: 0.96, 0.85, 0.40, 1  # Warm gold button color
+            background_normal: ""  # Removes default texture
+            border: (10, 10, 10, 10)
             on_release: app.root.ids.screen_manager.current = "settings"
             size_hint: 1, 0.2
-            color: 0, 0, 0, 1
-            background_color: 0.96, 0.96, 0.65, 1
+
 
         Label:
             text: ""
@@ -51,6 +75,9 @@ BoxLayout:
 
         AddScreen:
             name: "add"
+
+        DeleteScreen:
+            name: "delete"
 
         SettingsScreen:
             name: "settings"
@@ -115,20 +142,32 @@ BoxLayout:
 
             Button:
                 text: "Confirm"
+                font_size: 18
+                bold: True
                 color: 0, 0, 0, 1
-                background_color: 0.96, 0.96, 0.65, 1
+                background_color: 0.96, 0.85, 0.40, 1  # Warm gold button color
+                background_normal: ""  # Removes default texture
+                border: (10, 10, 10, 10)
                 on_release: root.set_values()
 
             Button:
                 text: "Reset"
+                font_size: 18
+                bold: True
                 color: 0, 0, 0, 1
-                background_color: 0.96, 0.96, 0.65, 1
-                on_release: root.reset_quiry()
+                background_color: 0.96, 0.85, 0.40, 1  # Warm gold button color
+                background_normal: ""  # Removes default texture
+                border: (10, 10, 10, 10)
+                on_release: root.reset_query()
 
             Button:
                 text: "Close"
+                font_size: 18
+                bold: True
                 color: 0, 0, 0, 1
-                background_color: 0.96, 0.96, 0.65, 1
+                background_color: 0.96, 0.85, 0.40, 1  # Warm gold button color
+                background_normal: ""  # Removes default texture
+                border: (10, 10, 10, 10)
                 on_release: root.dismiss()
 
 
@@ -161,9 +200,13 @@ BoxLayout:
 
             Button:
                 text: "Search"
-                size_hint: 0.25, 1  # Quarter width of the BoxLayout
+                font_size: 18
+                bold: True
                 color: 0, 0, 0, 1
-                background_color: 0.96, 0.96, 0.65, 1
+                background_color: 0.96, 0.85, 0.40, 1
+                background_normal: ""
+                border: (10, 10, 10, 10)
+                size_hint: 0.25, 1
                 on_release: root.search_book()
 
         # Content Label (below the search bar)
@@ -178,11 +221,16 @@ BoxLayout:
         Button:
             id: sort_by
             text: "Sort by: None"
+            font_size: 18
+            bold: True
+            color: 0, 0, 0, 1
+            background_color: 0.96, 0.85, 0.40, 1  # Warm gold button color
+            background_normal: ""  # Removes default texture
+            border: (10, 10, 10, 10)
             size_hint: 0.2, None  # Full width, fixed height
             height: "30dp"
             pos_hint: {"top": 0.9}  # Position just below the search bar
             color: 0, 0, 0, 1
-            background_color: 0.96, 0.96, 0.65, 1
             on_release: root.sort_by()
 
         # Scrollable Content Area
@@ -198,10 +246,130 @@ BoxLayout:
                 padding: 10, 10
                 text: "Not Found"
                 color: 0, 0, 0, 1
-
 <AddScreen>:
     BoxLayout:
         orientation: "vertical"
+        padding: 30
+        spacing: 20
+
+        canvas.before:
+            Color:
+                rgba: 0.96, 0.96, 0.80, 1  # Light beige background
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            text: "Add Books to the Database"
+            font_size: 26
+            bold: True
+            color: 0, 0, 0, 1
+            size_hint_y: None
+            height: "60dp"
+
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 10
+
+            BoxLayout:
+                size_hint_y: None
+                height: "40dp"
+
+                Label:
+                    text: "Book Title:"
+                    color: 0, 0, 0, 1
+                    size_hint_x: 0.3
+
+                TextInput:
+                    id: book_title
+                    multiline: False
+                    size_hint_x: 0.7
+
+            BoxLayout:
+                size_hint_y: None
+                height: "40dp"
+
+                Label:
+                    text: "Author:"
+                    color: 0, 0, 0, 1
+                    size_hint_x: 0.3
+
+                TextInput:
+                    id: book_author
+                    multiline: False
+                    size_hint_x: 0.7
+
+            BoxLayout:
+                size_hint_y: None
+                height: "40dp"
+
+                Label:
+                    text: "Genre:"
+                    color: 0, 0, 0, 1
+                    size_hint_x: 0.3
+
+                TextInput:
+                    id: book_genre
+                    multiline: False
+                    size_hint_x: 0.7
+
+            BoxLayout:
+                size_hint_y: None
+                height: "40dp"
+
+                Label:
+                    text: "Year:"
+                    color: 0, 0, 0, 1
+                    size_hint_x: 0.3
+
+                TextInput:
+                    id: book_year
+                    multiline: False
+                    size_hint_x: 0.7
+
+            BoxLayout:
+                size_hint_y: None
+                height: "40dp"
+
+                Label:
+                    text: "Pages:"
+                    color: 0, 0, 0, 1
+                    size_hint_x: 0.3
+
+                TextInput:
+                    id: book_pages
+                    multiline: False
+                    size_hint_x: 0.7
+
+        Label:
+            text: "Book Description:"
+            color: 0, 0, 0, 1
+            size_hint_y: None
+            height: "40dp"
+
+        TextInput:
+            id: book_description
+            size_hint_y: None
+            height: "120dp"
+
+        Button:
+            text: "Add Book"
+            font_size: 18
+            bold: True
+            size_hint_y: None
+            height: "60dp"
+            color: 0, 0, 0, 1
+            background_color: 0.96, 0.85, 0.40, 1  # Warm gold button color
+            background_normal: ""  # Removes default texture
+            border: (10, 10, 10, 10)  # Soft rounded corners
+            on_release: root.insert_book()
+
+
+<DeleteScreen>
+    BoxLayout:
+        orientation: "vertical"
+        padding: 30
+        spacing: 20
 
         canvas.before:
             Color:
@@ -210,13 +378,148 @@ BoxLayout:
                 size: self.size
                 pos: self.pos
 
-        padding: 10
-        spacing: 20
-
         Label:
-            text: "Add books to the database"
-            font_size: 20
+            text: "Delete Books from the Database"
+            font_size: 26
+            bold: True
             color: 0, 0, 0, 1
+            size_hint: 1, 0.1
+            height: "60dp"
+
+        BoxLayout:
+            size_hint_y: None
+            height: "20dp"
+            size_hint: 1, 0.15
+
+            Label:
+                text: "Enter Book ID:"
+                color: 0, 0, 0, 1
+                size_hint_x: 0.35  # Adjusted width
+                size_hint_y: None
+                height: "25dp"
+
+            TextInput:
+                id: book_delete_id
+                text: "99500003"
+                multiline: False
+                size_hint_x: 0.65  # Wider input box
+                size_hint_y: None  # Disable automatic height scaling
+                height: "25dp"  # Adjust height manually to make it narrower
+
+        BoxLayout:
+            size_hint_y: None
+            height: "40dp"
+            size_hint: 1, 0.15
+
+            Label:
+                text: "Title:"
+                color: 0, 0, 0, 1
+                size_hint_x: 0.35
+
+            Label:
+                id: book_delete_title
+                text: "None"
+                color: 0, 0, 0, 1
+                bold: True
+                size_hint_x: 0.65
+
+        BoxLayout:
+            size_hint_y: None
+            height: "40dp"
+            size_hint: 1, 0.15
+
+            Label:
+                text: "Author:"
+                color: 0, 0, 0, 1
+                size_hint_x: 0.35
+
+            Label:
+                id: book_delete_author
+                text: "None"
+                color: 0, 0, 0, 1
+                bold: True
+                size_hint_x: 0.65
+
+        BoxLayout:
+            size_hint_y: None
+            height: "40dp"
+            size_hint: 1, 0.15
+
+            Label:
+                text: "Genre:"
+                color: 0, 0, 0, 1
+                size_hint_x: 0.35
+
+            Label:
+                id: book_delete_genre
+                text: "None"
+                color: 0, 0, 0, 1
+                bold: True
+                size_hint_x: 0.65
+
+        BoxLayout:
+            size_hint_y: None
+            height: "40dp"
+            size_hint: 1, 0.15
+
+            Label:
+                text: "Year:"
+                color: 0, 0, 0, 1
+                size_hint_x: 0.35
+
+            Label:
+                id: book_delete_year
+                text: "None"
+                bold: True
+                color: 0, 0, 0, 1
+                size_hint_x: 0.65
+
+        BoxLayout:
+            size_hint_y: None
+            height: "40dp"
+            size_hint: 1, 0.15
+
+            Label:
+                text: "Pages:"
+                color: 0, 0, 0, 1
+                size_hint_x: 0.35
+
+            Label:
+                id: book_delete_pages
+                text: "None"
+                bold: True
+                color: 0, 0, 0, 1
+                size_hint_x: 0.65
+
+        BoxLayout:
+            spacing: 15  # More spacing between buttons
+            size_hint_y: None
+            height: "40dp"
+            size_hint: 1, 0.15
+
+            Button:
+                text: "Check"
+                font_size: 20
+                bold: True
+                height: "40dp"
+                size_hint_x: 0.4  # Slightly smaller width
+                color: 0, 0, 0, 1
+                background_color: 0.96, 0.85, 0.40, 1
+                background_normal: ""
+                on_release: root.check_book()
+
+            Button:
+                text: "Delete"
+                font_size: 20
+                bold: True
+                height: "40dp"
+                size_hint_x: 0.4  # Slightly smaller width
+                color: 0, 0, 0, 1
+                background_color: 0.96, 0.85, 0.40, 1
+                background_normal: ""
+                on_release: root.delete_book()
+
+
 
 <SettingsScreen>:
     BoxLayout:
