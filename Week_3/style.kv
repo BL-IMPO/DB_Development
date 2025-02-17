@@ -308,10 +308,26 @@ BoxLayout:
                     color: 0, 0, 0, 1
                     size_hint_x: 0.3
 
-                TextInput:
-                    id: book_genre
-                    multiline: False
+                Spinner:
+                    text: 'Choose an option'
+                    values: ['Engineering', 'Physics', 'Mathematics', 'Science', 'Computer Science']
+                    font_size: 20
+                    bold: True
+                    height: "40dp"
+                    size_hint_x: 0.4  # Slightly smaller width
+                    color: 0, 0, 0, 1
+                    background_color: 0.96, 0.85, 0.40, 1
+                    background_normal: ""
                     size_hint_x: 0.7
+                    on_text: root.on_spinner_select(self, self.text)
+
+
+
+
+                #TextInput:
+                #    id: book_genre
+                #    multiline: False
+                #    size_hint_x: 0.7
 
             BoxLayout:
                 size_hint_y: None

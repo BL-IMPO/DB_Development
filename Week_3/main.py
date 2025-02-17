@@ -142,6 +142,10 @@ class AddScreen(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
         self.book_id = last_book_id.book_id_get() + 1
+        self.label = "Engineering"
+
+    def on_spinner_select(self, spinner, text):
+        self.label = text
 
     def insert_book(self):
         conn = psycopg2.connect(
@@ -154,7 +158,7 @@ class AddScreen(Screen):
         cur = conn.cursor()
 
         query_books = f"""INSERT INTO books (label, book_id, title, year, author) 
-                    VALUES ('{self.ids.book_genre.text}',
+                    VALUES ('{self.label}',
                             {self.book_id} , 
                             '{self.ids.book_title.text}', 
                             {self.ids.book_year.text}, 
