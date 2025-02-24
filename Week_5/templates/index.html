@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary of Database Terms</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Glossary of Database Terms</h1>
+        <p class="description">
+            A database is a structured collection of data that is organized for efficient storage, retrieval, and management.
+            This glossary provides definitions for key terms and concepts related to databases and database management systems (DBMS).
+        </p>
+
+        <!-- Letter Navigation -->
+        <div class="letter-navigation">
+            <a href="{{ url_for('filter_by_letter', letter='ALL') }}">ALL</a>
+            <span class="separator">·</span>
+            {% for letter in glossary.keys() %}
+            <a href="{{ url_for('filter_by_letter', letter=letter) }}">{{ letter }}</a>
+            {% if not loop.last %}  <!-- Add separator if not the last letter -->
+            <span class="separator">·</span>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- Glossary Content -->
+        <div class="glossary">
+            {% if selected_letter %}
+                <!-- Show only terms for the selected letter or ALL -->
+                {% if selected_letter == "ALL" %}
+                    <!-- Show all terms -->
+                    {% for letter, terms in glossary.items() %}
+                    <div class="letter-section" id="{{ letter }}">
+                        <h2>{{ letter }}</h2>
+                        {% for term, definition in terms %}
+                        <div class="term">
+                            <dt>{{ term }}</dt>
+                            <dd>{{ definition }}</dd>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <!-- Show terms for the selected letter -->
+                    <div class="letter-section" id="{{ selected_letter }}">
+                        <h2>{{ selected_letter }}</h2>
+                        {% for term, definition in filtered_terms %}
+                        <div class="term">
+                            <dt>{{ term }}</dt>
+                            <dd>{{ definition }}</dd>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% else %}
+                <!-- Show all terms if no letter is selected -->
+                {% for letter, terms in glossary.items() %}
+                <div class="letter-section" id="{{ letter }}">
+                    <h2>{{ letter }}</h2>
+                    {% for term, definition in terms %}
+                    <div class="term">
+                        <dt>{{ term }}</dt>
+                        <dd>{{ definition }}</dd>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

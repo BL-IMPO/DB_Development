@@ -1,0 +1,148 @@
+,Terms,Definitions
+0,Cold Backup,A cold backup is a consistent copy of all files of the cluster using OS tools like cp or tar. The instance must be stopped during backup creation. Works only at the cluster level.
+1,Hot Continuous Archiving,Consists of a base backup (copy of all cluster files) and subsequent WAL files storing data changes.
+2,Hot Logical Backup (pg_dump),A logical backup captures data within a database or its parts using pg_dump. Creates a consistent snapshot while the instance runs.
+3,NF,First normal form: Each table column contains atomic values (no nested/multiple values).
+4,NF,"Second normal form: Meets 1NF, and non-candidate attributes fully depend on the entire composite key."
+5,NF,"Third normal form: Meets 2NF, and no transitive dependency exists between non-key attributes."
+6,NF,"Fourth normal form: Meets BCNF, and non-trivial multivalued dependencies are determined by candidate keys."
+7,ABSOLUTE,Specifies an absolute cursor position.
+8,Access Control,"Regulates access to data (read, modify, copy, delete)."
+9,Access Control List (ACL),A security policy listing user/process permissions for resources.
+10,ACID,"Transaction properties: Atomicity, Consistency, Isolation, Durability. Ensures reliable transaction processing."
+11,Active Record ORM,Maps database tables to application classes; records are class instances.
+12,Adaptive Search,Dynamically adjusts indexing/search parameters based on query complexity.
+13,ALIAS,Defines alternative names for PL/pgSQL function parameters.
+14,ALL,Compares a value to all elements in an array using a specified operator.
+15,ALTER,"Modifies existing database objects (tables, indexes)."
+16,ANALYZE,Updates PostgreSQL query optimization statistics.
+17,AND,Logical operator for combining conditions.
+18,Angular Distance,Similarity measure based on vector angles.
+19,Anomaly,Data inconsistencies due to normalization violations.
+20,Anti-caching,"Fetches data from persistent storage when missing in cache, aborting and retrying transactions."
+21,Approximate Nearest Neighbor (ANN),Efficiently finds closest vectors using techniques like LSH or graph-based indexing.
+22,Archive Recovery Mode,Instance state during recovery using archived WAL files.
+23,Archiving,Copies WAL files to a failsafe location for Point-in-Time Recovery (PITR).
+24,ARRAY,"Collection of elements of the same type, declared with square brackets."
+25,ASSERT,Checks a condition; raises an error if false (debugging tool).
+26,Asynchronous Replication,Master sends data to standby without waiting for confirmation.
+27,Atomicity,Ensures transactions are all-or-nothing (no partial updates).
+28,Attributes,Characteristics describing entities in a database (ER model).
+29,Authentication,"Verifies user identity via credentials (e.g., username/password)."
+30,Authorization,Determines user/process permissions after authentication.
+31,AUTO_INCREMENT,Automatically increments field values for new rows.
+32,Autovacuum,PostgreSQL feature for automatic database cleanup/optimization.
+33,Availability,"System uptime and operational capability, especially in distributed systems."
+34,AVG(),Aggregates average values from a column.
+35,B+ Tree,B-tree variant where data is stored only in leaf nodes.
+36,BACKUP,Process of creating database backups.
+37,BACKWARD,Moves a cursor backward through a result set.
+38,BASE,"NoSQL database properties: Basically Available, Soft-state, Eventually consistent."
+39,BCNF,"Boyce-Codd Normal Form: Meets 3NF, and every determinant is a candidate key."
+40,BEFORE/AFTER,Specifies trigger execution timing (before/after an operation).
+41,BEGIN,Starts a transaction block in PL/pgSQL.
+42,BETWEEN,Checks if a value lies within a range.
+43,Big Data,Storage/processing of large-scale datasets.
+44,BigInt,Data type for large integers.
+45,Binary Embeddings,Vectors with binary elements (0/1) for compact storage.
+46,BLOB,"Stores binary large objects (e.g., multimedia files)."
+47,Blue-Green Deployments,Deployment strategy using dual infrastructure sets to minimize downtime.
+48,BOOLEAN,Data type with TRUE/FALSE values.
+49,Bottleneck,System performance limitation due to resource contention.
+50,Brute-Force Search,Exhaustive search comparing every vector; accurate but slow for large datasets.
+51,B-Tree,Balanced tree index structure for efficient data retrieval.
+52,Cache,High-speed data storage layer for frequent access.
+53,Cache Invalidation,Removes stale data from a cache.
+54,Cache-Aside,Application-managed caching: fetches data from DB if not in cache.
+55,Canary Releases,Gradual feature rollout to a subset of users/servers.
+56,Candidate Key,Minimal superkey uniquely identifying table records.
+57,CAP Theorem,"Distributed systems trade-off: Consistency, Availability, Partition Tolerance (pick two)."
+58,Cascade Delete,Automatically deletes related child records when a parent is deleted.
+59,CASE,Conditional expression similar to IF-ELSE.
+60,Cassandra,Distributed wide-column NoSQL database for large-scale data.
+61,CAST,Converts data types.
+62,CHECK Constraint,Enforces a boolean condition on table data.
+63,Checkpoint,Ensures database files are in a consistent state; flushes data to disk.
+64,CLOB,Stores large text data.
+65,CLOSE,Closes a cursor to release resources.
+66,Cluster,Group of nodes working together for scalability/availability.
+67,COALESCE,Returns the first non-null value from a list.
+68,Collation,"Rules for string comparison/sorting (e.g., case sensitivity)."
+69,Column Database,Stores data by column for analytical query efficiency.
+70,COMMIT,"Finalizes a transaction, making changes permanent."
+71,Composite Key,Key composed of multiple columns to uniquely identify records.
+72,Concurrency,Handling multiple operations simultaneously without conflicts.
+73,Connection Pooling,Reuses database connections to improve performance.
+74,Consistency,Ensures data adheres to defined rules and constraints.
+75,CONSTRAINT,"Enforces rules on table data (e.g., UNIQUE, PRIMARY KEY)."
+76,CONTINUE,Skips to the next loop iteration.
+77,Cosine Similarity,Measures vector similarity using cosine of the angle between them.
+78,COUNT(),Aggregates the number of rows.
+79,CREATE,"Creates database objects (tables, indexes)."
+80,CROSS JOIN,Combines all rows from two tables (Cartesian product).
+81,Cursor,Iterates over query results row by row.
+82,Data Abstraction Layer,Hides database complexity from applications.
+83,Data Dictionary,Metadata repository describing database objects.
+84,Data Independence,Separates application logic from database structure/storage.
+85,Data Warehouse,Optimized for analytical queries and historical data.
+86,Database,Structured collection of data managed by a DBMS.
+87,DBMS,Database Management System: software to create/manage databases.
+88,Deadlock,Two transactions blocking each other indefinitely.
+89,Dead Tuple,Unused PostgreSQL row requiring cleanup.
+90,DECLARE,Defines variables/cursors in PL/pgSQL.
+91,DEFAULT,Assigns a default value to a column/parameter.
+92,DELETE,Removes rows from a table.
+93,Denormalization,Introduces redundancy to improve read performance.
+94,Dense Vector,Vector with mostly non-zero elements.
+95,DISTINCT,Removes duplicate rows from query results.
+96,Distributed Database,Data spread across multiple network nodes.
+97,DML,"Data Manipulation Language: INSERT, UPDATE, DELETE."
+98,Document Database,"Stores flexible JSON-like documents (e.g., MongoDB)."
+99,DROP,Deletes database objects.
+100,Durability,Ensures committed transactions survive system failures.
+101,Euclidean Distance,Straight-line distance between vectors.
+102,EXCEPT,Returns rows from the first query not present in the second.
+103,EXECUTE,Runs dynamically constructed SQL.
+104,EXPLAIN,Displays query execution plan for optimization.
+105,FOREIGN KEY,Links tables by referencing another tableвЂ™s primary key.
+106,FULL OUTER JOIN,"Combines all rows from both tables, filling unmatched areas with NULL."
+107,GRANT,Grants user privileges.
+108,GROUP BY,Groups rows by specified columns for aggregation.
+109,HAVING,Filters groups after aggregation.
+110,HNSW,Hierarchical Navigable Small World: Graph-based ANN algorithm.
+111,Index,Data structure speeding up data retrieval.
+112,INNER JOIN,Returns rows with matching values in both tables.
+113,INSERT,Adds new rows to a table.
+114,Isolation Level,"Defines transaction visibility (e.g., Read Committed, Serializable)."
+115,JSONB,PostgreSQL binary JSON storage with indexing.
+116,LEFT JOIN,Returns all left table rows + matched right table rows.
+117,LOCK,Restricts access to data during transactions.
+118,Materialized View,Stores query results physically for faster access.
+119,MAX(),Aggregates maximum column value.
+120,MIN(),Aggregates minimum column value.
+121,MongoDB,Document-oriented NoSQL database.
+122,Normalization,Reduces data redundancy through structured decomposition.
+123,NoSQL,Non-relational databases optimized for scalability/flexibility.
+124,NULL,Represents missing/unknown values.
+125,OR,Logical operator for alternative conditions.
+126,ORDER BY,Sorts query results.
+127,PARTITIONING,Splits tables into manageable segments.
+128,PRIMARY KEY,Uniquely identifies each row in a table.
+129,Query Optimization,Improves query performance via execution plan analysis.
+130,RAID,Redundant storage configuration for fault tolerance.
+131,REPLICATION,Copies data across nodes for redundancy/availability.
+132,RIGHT JOIN,Returns all right table rows + matched left table rows.
+133,ROLLBACK,Reverts uncommitted transaction changes.
+134,SCHEMA,"Logical container for database objects (tables, views)."
+135,SELECT,Retrieves data from tables.
+136,Sharding,Horizontal partitioning of data across servers.
+137,SQL,Structured Query Language for managing relational databases.
+138,SUM(),Aggregates sum of column values.
+139,Transaction,Atomic unit of database operations (commit/rollback).
+140,TRIGGER,Automatically executes code on data changes.
+141,UNIQUE Constraint,Ensures column values are distinct.
+142,UPDATE,Modifies existing rows in a table.
+143,VACUUM,Reclaims storage occupied by dead tuples in PostgreSQL.
+144,VIEW,Virtual table defined by a query.
+145,WAL,Write-Ahead Logging for crash recovery.
+146,WHERE,Filters rows based on conditions

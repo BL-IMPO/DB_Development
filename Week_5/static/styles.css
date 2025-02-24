@@ -1,0 +1,78 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light grey background for the entire page */
+    display: flex;
+    justify-content: center;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #ffffff; /* White background for the main content */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    min-height: 100vh; /* Ensure the main content stretches to the full height */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.description {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.glossary {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.letter-section {
+    margin-bottom: 30px;
+}
+
+.letter-section h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.term {
+    margin-bottom: 20px;
+}
+
+.term dt {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.term dd {
+    margin-left: 20px;
+}
+
+.letter-navigation {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.letter-navigation a {
+    margin: 0 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.letter-navigation a:hover {
+    text-decoration: underline;
+}
+
+.letter-navigation .separator {
+    margin: 0 5px;
+    color: #000;
+}

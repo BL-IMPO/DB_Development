@@ -1,0 +1,958 @@
+﻿Термин,Определение
+ABSOLUTE,Specifies an absolute position in a cursor operation.
+ALIAS,Defines an alternative name for function parameters in PL/pgSQL.
+ARRAY,"A collection of elements of the same type, declared using square brackets."
+ASSERT,Checks if a condition is true; raises an error if false (debugging tool).
+BACKWARD,Allows moving a cursor in reverse order through the result set.
+CLOSE,Closes a previously opened cursor to release resources.
+COLLATE,Specifies collation rules for string comparisons in queries.
+COLUMN,Represents a field in a table used in PL/pgSQL queries.
+COLUMN_NAME,The name of a column in a result set or table.
+CONSTANT,Defines a variable with a fixed value that cannot be changed.
+CONSTRAINT,"Defines rules (e.g., UNIQUE, PRIMARY KEY) that restrict table data."
+CONSTRAINT_NAME,The name assigned to a constraint in a table definition.
+CONTINUE,Skips the rest of the current iteration in a loop and proceeds to the next iteration.
+CURRENT,Represents the current row in a cursor or the current timestamp.
+CURSOR,A database object used to iterate over a result set row by row.
+DATATYPE,"Specifies the type of a PL/pgSQL variable (e.g., INTEGER, TEXT)."
+DEBUG,Used for logging and debugging PL/pgSQL functions.
+DEFAULT,Assigns a default value to a function parameter or column.
+DETAIL,Provides additional context for an error message.
+DIAGNOSTICS,Retrieves runtime error details inside PL/pgSQL exception handling.
+DUMP,"Used for debugging, capturing data structure information."
+ELSEIF,Not a PL/pgSQL keyword (use ELSIF instead).
+ELSIF,Specifies an additional condition in an IF statement.
+ERRCODE,Returns the SQLSTATE error code of the most recent error.
+ERROR,A message level used with RAISE to signal an exception.
+EXCEPTION,Defines an error-handling block for handling runtime errors.
+EXIT,Terminates a loop or function execution.
+FETCH,Retrieves rows from a cursor into variables.
+FIRST,Moves a cursor to the first row in a result set.
+FORWARD,Moves a cursor forward through result rows.
+GET,Used to retrieve error details in an EXCEPTION block.
+HINT,Provides suggestions in error messages to help resolve issues.
+IMPORT,Not a PL/pgSQL keyword (use EXECUTE for dynamic queries).
+INFO,A message level used with RAISE for informational messages.
+INSERT,Adds new records to a table using PL/pgSQL.
+IS,"Used for condition checking, commonly in IF statements."
+LAST,Moves a cursor to the last row in a result set.
+LOG,A message level used with RAISE for logging purposes.
+MESSAGE,The text associated with an error or notice.
+MESSAGE_TEXT,Retrieves the textual content of an error message.
+MOVE,Changes the position of a cursor within a result set.
+NEXT,Moves a cursor to the next row in a result set.
+NO,Used with SCROLL to restrict cursor movement.
+NOTICE,A message level used with RAISE for non-critical notifications.
+OPEN,Opens a previously declared cursor.
+OPTION,"Specifies additional settings in PL/pgSQL queries (e.g., function volatility)."
+PERFORM,Executes a function or command that does not return a value.
+PG_CONTEXT,Retrieves the execution context of an exception in PostgreSQL.
+PG_DATATYPE_NAME,The internal PostgreSQL name of a data type.
+PG_EXCEPTION_CONTEXT,Provides detailed execution context information for exceptions.
+PG_EXCEPTION_DETAIL,Provides detailed error information inside an EXCEPTION block.
+PG_EXCEPTION_HINT,Provides hints on resolving an error in an EXCEPTION block.
+PRINT_STRICT_PARAMS,Used for debugging strict parameter checking.
+PRIOR,Moves a cursor to the previous row.
+QUERY,A dynamically constructed SQL statement executed with EXECUTE.
+RAISE,"Generates an error, notice, or warning in PL/pgSQL."
+RELATIVE,Moves a cursor a specific number of rows from its current position.
+RESULT_OID,The Object Identifier (OID) of the last inserted row.
+RETURN,Exits a function and optionally returns a value.
+RETURNED_SQLSTATE,Retrieves the SQLSTATE code from the last exception.
+REVERSE,Iterates through a loop in reverse order.
+ALL,"The right-hand side is a parenthesized expression, which must yield an array value. The left-hand expression is evaluated and compared to each element of the array using the given operator, which must yield a Boolean result. The result of ALL is “true” if all comparisons yield true (including the case where the array has zero elements). The result is “false” if any false result is found."
+BEGIN,"Starts a PL/pgSQL block, grouping multiple statements together."
+BY,Used in FOR ... BY loops to specify an increment step.
+CASE,"Implements conditional branching, similar to IF-ELSE but in an expression form."
+DECLARE,"Defines variables, constants, cursors, and record types inside a PL/pgSQL block."
+ELSE,Specifies the alternative branch in an IF or CASE statement.
+END,Marks the end of a PL/pgSQL block or a control structure like LOOP or CASE.
+EXECUTE,Runs a dynamically constructed SQL statement inside PL/pgSQL.
+FOR,Executes a loop a specific number of times or iterates through a query result.
+FOREACH,Iterates over each element in an array.
+FROM,Specifies the data source in a SELECT INTO or INSERT ... SELECT statement.
+IF,Executes a block of statements conditionally.
+IN,Used in FOR loops to iterate over a query result or an array.
+INTO,Stores the result of a SELECT statement into a variable.
+LOOP,Creates an unconditional loop that must be explicitly exited.
+NOT,"Negates a condition in an IF, CASE, or WHERE clause."
+NULL,Represents an unknown or missing value in PostgreSQL.
+OR,"Combines multiple conditions in an IF, CASE, or WHERE clause."
+STRICT,"Requires that a SELECT INTO statement returns exactly one row; otherwise, an error occurs."
+THEN,"Follows an IF condition, defining what happens when the condition is true."
+TO,Used in FOR ... TO loops to specify an endpoint.
+USING,Supplies parameters to a dynamically executed SQL statement.
+WHEN,Defines conditions inside a CASE statement.
+WHILE,Creates a loop that continues executing as long as a condition remains true.
+Vector Database,"A type of database optimized for storing and searching high-dimensional vector embeddings, commonly used in applications like similarity search, recommendation systems, and AI-driven search."
+Vector Embedding,"A numerical representation of data (such as text, images, or audio) in a high-dimensional space that captures semantic relationships and similarities."
+Similarity Search,A technique used in vector databases to find data points that are most similar to a given query based on distance metrics like cosine similarity or Euclidean distance.
+Approximate Nearest Neighbor (ANN) Search,A method for efficiently finding the closest vectors to a query vector in large datasets using techniques like locality-sensitive hashing (LSH) or graph-based indexing.
+HNSW (Hierarchical Navigable Small World),"A popular graph-based algorithm for fast approximate nearest neighbor search, leveraging hierarchical layers to optimize search efficiency."
+Indexing,"The process of structuring data in a vector database to optimize search performance, reducing computational cost and improving retrieval speed."
+Distance Metric,"A mathematical function used to measure the similarity between vectors, with common choices including Euclidean distance, cosine similarity, and Manhattan distance."
+Quantization,A technique for compressing vector representations to reduce memory usage and improve retrieval speed by approximating floating-point values with lower-precision representations.
+IVF (Inverted File Index),"A clustering-based indexing method used in vector databases where vectors are grouped into centroids, allowing for efficient nearest neighbor search by scanning relevant clusters."
+Re-Ranking,"A process used after retrieving approximate matches to refine search results, often by computing exact distances or applying additional filtering criteria."
+FAISS (Facebook AI Similarity Search),"An open-source library developed by Facebook AI for fast searching in large-scale vector databases, widely used for efficient nearest neighbor retrieval."
+Scalar Quantization (SQ),"A technique that reduces the precision of vector components by mapping continuous values to discrete levels, helping in memory-efficient vector storage."
+Product Quantization (PQ),"A more advanced quantization method that divides high-dimensional vectors into smaller subvectors and encodes them separately, allowing for faster and memory-efficient approximate nearest neighbor searches."
+Vector Index,A data structure that enables fast retrieval of vectors in a vector database by organizing them efficiently based on similarity measures.
+Cosine Similarity,"A distance metric that measures the cosine of the angle between two vectors, commonly used in NLP applications and similarity searches."
+Euclidean Distance,"A distance metric that calculates the straight-line distance between two vectors in a multi-dimensional space, often used in machine learning and clustering tasks."
+Manhattan Distance (L1 Distance),"A distance metric that sums the absolute differences between vector components, often used when movement is restricted to grid-like paths."
+Locality-Sensitive Hashing (LSH),"A technique that hashes similar vectors into the same ""buckets"" to enable efficient approximate nearest neighbor searches."
+Hybrid Search,"A retrieval approach that combines both traditional keyword-based search and vector similarity search, commonly used in modern AI-powered search engines."
+Vector Dimension,"The number of numerical values (features) in a vector representation, determining the complexity and granularity of the stored embeddings."
+K-Nearest Neighbors (KNN),A machine learning algorithm that identifies the closest k vectors to a given query vector based on a distance metric.
+Embedding Model,"A deep learning model (such as Word2Vec, BERT, or CLIP) that converts raw data (text, images, audio) into vector representations for similarity searches."
+Semantic Search,"A search methodology that retrieves results based on meaning rather than exact keyword matches, enabled by vector embeddings."
+Dense Vector,"A vector where most elements have nonzero values, often used in deep learning-based embedding representations."
+Sparse Vector,"A vector where most elements are zero, commonly used in traditional text-based retrieval methods like TF-IDF."
+Hierarchical Clustering,A method that organizes vectors into a tree-like structure for more efficient search and retrieval.
+Vector Quantization (VQ),A compression technique that approximates vectors with a limited set of representative vectors to save memory and speed up searches.
+Hashing Function,"A function that maps vectors to fixed-length codes, often used in locality-sensitive hashing (LSH) for fast similarity searches."
+Pretrained Embeddings,"Vector representations that are generated using a pre-trained model (e.g., OpenAI’s CLIP, GloVe, or FastText) and can be directly used in vector databases."
+Feature Extraction,"The process of converting raw data (e.g., images, text) into a numerical vector representation that captures its key characteristics."
+Multi-Index Quantization (MIQ),A technique that improves search efficiency by using multiple quantization indexes instead of a single one.
+Vector Pruning,The process of reducing the size of a vector index by removing unnecessary or redundant vectors.
+Adaptive Search,A search method that dynamically adjusts indexing or search parameters based on query complexity.
+Hierarchical Indexing,"An indexing structure that arranges vectors in multiple layers, improving search efficiency by navigating through different levels."
+Graph-Based Search,A search method that represents vectors as nodes in a graph and navigates through connections to find nearest neighbors.
+Brute-Force Search,A naive search approach where every vector in the database is compared to the query vector; accurate but slow for large datasets.
+Disk-Based Indexing,A technique that stores vector indexes on disk rather than in memory to handle large-scale datasets with limited RAM.
+Distributed Indexing,A technique that spreads vector indexes across multiple servers to scale vector database operations efficiently.
+Hierarchical Small-World Graphs (HNSW),A graph-based algorithm that efficiently finds approximate nearest neighbors by building a multi-layered small-world network.
+GPU-Accelerated Search,"The use of GPUs to parallelize vector search operations, speeding up large-scale similarity searches."
+Dot Product Similarity,A similarity measure where higher values indicate more similarity; often used in ranking systems.
+Mahalanobis Distance,"A distance metric that accounts for correlations between vector features, improving search quality in high-dimensional spaces."
+Jaccard Similarity,"A metric used for measuring the similarity between two sets, sometimes applied in sparse vector comparisons."
+KL Divergence (Kullback-Leibler Divergence),"A measure of how different one probability distribution is from another, sometimes used in probabilistic embeddings."
+Earth Mover’s Distance (EMD),"A metric that quantifies the cost of transforming one distribution into another, useful for comparing feature distributions."
+Tanimoto Coefficient,A similarity measure used in cheminformatics and image retrieval that considers both common and unique elements between two vectors.
+Angular Distance,"A similarity measure based on the angle between two vectors, often used in place of cosine similarity."
+Binary Embeddings,"A type of vector embedding where elements are binary (0 or 1), useful for compact storage and fast retrieval."
+Self-Supervised Learning (SSL),"A technique where models learn vector representations without labeled data, often used in vector embeddings."
+Contrastive Learning,A self-supervised learning approach that learns to map similar data points closer in vector space while pushing dissimilar ones apart.
+Meta-Learning in Vectors,The study of optimizing vector representations dynamically based on search patterns and query history.
+Knowledge Graph-Augmented Search,A hybrid approach that combines vector similarity search with structured knowledge graphs for better retrieval.
+Hybrid Vector + Metadata Search,A method that combines vector similarity with structured metadata filtering to refine search results.
+Real-Time Vector Indexing,The ability to continuously update vector indexes in real time without reprocessing the entire database.
+Multi-Vector Representations,"A technique that uses multiple embeddings per item (e.g., different embeddings for text and images) to enhance search accuracy."
+Few-Shot Learning in Vector Databases,"The ability of a model to learn from very few examples, leveraging vector embeddings for similarity-based predictions."
+Vector Fusion,The combination of multiple vector representations from different models to enhance search performance.
+Differentiable Search Indexes,"A novel approach where search indexes are trainable, allowing them to adapt dynamically to query distributions."
+Incremental Indexing,The ability to add new vectors to an index without needing a full re-indexing process.
+Vector Data Governance,"Policies and practices for managing vector data, including storage, privacy, and compliance concerns."
+Server (or Node),"A server is some (real or virtual) hardware where PostgreSQL is installed. In this document, the word instance is a different concept from server. See the definition of instance later in this document"
+Cluster of Nodes,"A set of nodes, which interchange information via replication."
+Installation,"After you have downloaded and installed PostgreSQL, you have a set of programs, scripts, configuration- and other files on a server. This set is called the 'Installation'. It includes all instance programs as well as some client programs like psql."
+Server Database,The term server database is often used in the context of client/server connections to refer to an instance or a single database.
+Cluster (or 'Database Cluster'),"A cluster is a storage area (directory, subdirectories and files) in the file system, where a collection of databases plus meta-information resides. Within the database cluster there are also the definitions of global objects like users and their rights. They are known across the entire database cluster. (Access rights for an user may be limited to individual objects like a certain table or a certain schema. In that case, the user will not have this access rights to the other objects of the cluster.)"
+Instance (or 'Database Server Instance' or 'Database Server' or 'Backend'),"An instance is a group of processes (on a UNIX server) or one service (on a Windows server) plus shared memory, which controls and manages exactly one cluster. Using IP terminology one can say that one instance occupies one IP/port combination, eg. the combination http://localhost:5432. It is possible that on a different port of the same server another instance is running. The processes (in a UNIX server), which build an instance, are called: postmaster (creates one 'postgres'-process per client-connection), logger, checkpointer, background writer, WAL writer, autovacuum launcher, archiver, stats collector. The role of each process is explained in the chapter architecture."
+,"A database is a storage area in the file system, where a collection of objects is stored in files. The objects consist of data, metadata (table definitions, data types, constraints, views, ...) and other data like indices. Those objects are stored in the default database 'postgres' or in a newly created database."
+Database,"A database is a storage area in the file system, where a collection of objects is stored in files. The objects consist of data, metadata (table definitions, data types, constraints, views, ...) and other data like indices. Those objects are stored in the default database 'postgres' or in a newly created database. The storage area for one database is organized as one subdirectory tree within the storage area of the database cluster. Thus a database cluster may contain multiple databases."
+Schema,".A schema is a namespace within a database: it contains named objects (tables, data types, functions, and operators) whose names can duplicate those of other objects existing in other schemas of this database. Every database contains the default schema 'public' and may contain more schemas. All objects of one schema must reside within the same database. Objects of different schemas within the same database may have the same name."
+Search Path (or 'Schema Search Path'),"A Search Path is a list of schema names. If applications use unqualified object names (e.g.: 'employee_table' for a table name), the search path is used to locate this object in the given sequence of schemas. The schema 'pg_catalog' is always the first part of the search path although it is not explicitly listed in the search path. This behaviour ensures that PostgreSQL finds the system objects."
+initdb (OS command),"Despite of its name the utility initdb creates a new cluster, which contains the 3 databases 'template0', 'template1' and 'postgres'."
+createdb (OS command),The utility createdb creates a new database within the actual cluster.
+CREATE DATABASE (SQL command),The SQL command CREATE DATABASE creates a new database within the actual cluster.
+Directory Structure,"A cluster and its databases consists of files, which hold data, actual status information, modification information and a lot more. Those files are organized in a fixed way under one directory node."
+Shared Buffers,"Shared bufferes are RAM pages, which mirror pages of data files on disc. They exist due to performance reasons. The term shared results from the fact that a lot of processes read and write to that area."
+'Dirty' Page,"Pages in the shared buffers mirror pages of data files on disc. When clients request changes of data, those pages get changed without - provisionally - a change of the related pages on disc. Until the background writer writes those modified pages to disc, they are called 'dirty' pages."
+Checkpoint,"A checkpoint is a special point in time where it is guaranteed that the database files are in a consistent state. At checkpoint time all change records are flushed to the WAL file, all dirty data pages (in shared buffers) are flushed to disc, and at last a special checkpoint record is written to the WAL file."
+WAL File,"WAL files contain the changes which are applied to the data by modifying commands like INSERT, UPDATE, DELETE or CREATE TABLE ... . This is redundant information as it is also recorded in the data files (for better performance at a later time). According to the configuration of the instance, there may be more information within WAL files. WAL files reside in the pg_wal directory (which was named pg_xlog before version 10), have a binary format and a fixed size of 16MB. When they are no longer needed, they get recycled by renaming and reusing their already allocated space."
+Logfile,The instance logs and reports warning and error messages about special situations in readable text files. These logfiles can reside at any place in the directory structure of the server and are not part of the cluster.
+Log Record,A log record is a single information unit within a WAL file.
+Segment,The term segment is sometimes used as a synonym for WAL file.
+MVCC,"Multiversion Concurrency Control (MVCC) is a common database technique to accomplish two goals: First, it allows the management of parallel running transactions on a logical level and second, it ensures high performance for concurrent read and write actions. It is implemented as follows: Whenever some values of an existing row change, PostgreSQL writes a new version of this row to the database without deleting the old one. In such situations the database contains multiple versions of the row. In addition to their regular data the rows contain transaction IDs which allows to decide, which other transactions will see the new or the old row. Hence other transactions sees only those values (of other transactions), which are committed."
+Backup and Recovery,"The term cold as an addition to the backup method name indicates that with this method the instance must be stopped to create a useful backup. In contrast, the addition 'hot' denotes methods where the instance MUST run (and hence changes to the data may occur during backup actions)."
+(Cold) Backup (file system tools),"A cold backup is a consistent copy of all files of the cluster with OS tools like cp or tar. During the creation of a cold backup the instance must not run - otherwise the backup is useless. Hence you need a period of time in which applications do not use any database of the cluster - a continuous 7×24 operation mode is not possible. And secondly: the cold backup works only on the cluster level, not on any finer granularity like database or table."
+(Hot) Logical Backup (pg_dump utility),"A logical backup is a consistent copy of the data within a database or some of its parts. It is created with the utility pg_dump. Although pg_dump may run in parallel to applications (the instance must be up), it creates a consistent snapshot as of the time of its start."
+(Hot) Continuous Archiving,"Such backups consist of two parts. The first one is the so-called base backup, which is a copy of all files of a cluster. The second one consists of all data-changes since the start of the backup command. They are stored in WAL files."
+PITR: Point in Time Recovery,"When you use the technique of 'Continuous Archiving' (Base Backup) and archive all occurring WAL files, you can restore the database as it was at an arbitrary time. To do so, you must restore the base backup and replay the WAL files against it up to a defined timestamp."
+Archiving,"Archiving is the process of copying WAL files to a failsafe location. When you plan to use PITR you must ensure that the sequence of WAL files is saved for a longer period. To support the process of copying WAL files at the right moment (when they are completely filled and a switch to the next WAL file has taken place), PostgreSQL runs the archiving process which is part of the instance. This process copies WAL files to a configurable destination."
+Recovering,Recovering is the process of playing WAL files against a physical backup. One of the involved steps is the copy of the WAL files from the failsafe archive location to its original location in '/pg_xlog'. The aim of recovery is to bring the cluster into a consistent state at a defined timestamp.
+Archive Recovery Mode,"When recovering takes place, the instance is in archive recovery mode."
+Restartpoint,A restart point is an action similar to a checkpoint. Restart points are only performed when the instance is in archive recovery mode or in standby mode.
+Timeline,"After a successful recovery PostgreSQL transfers the cluster into a new timeline to avoid problems, which may occur when PITR is reset and WAL files reapplied (e.g.: to a different timestamp). Timeline names are sequential numbers: 1, 2, 3, ..."
+Replication,"Replication is a technique to send data, which was written within a master server, to one or more standby servers or even another master server."
+Master Server,The master server is an instance on a server which sends data to other instances in addition to its local processing of data.
+Standby Server,The standby server is an instance on a server which receives information from a master server about changes of its data.
+Warm Standby Server,"A warm standby server is a running instance, which is in standby_mode (recovery.conf file). It continuously reads and processes incoming WAL files (in the case of log-shipping) or log records (in the case of streaming replication). It does not accept client connections."
+Hot Standby Server,A hot standby server is a warm standby server with the additional flag hot_standby in postgres.conf. It accepts client connections and read-only queries.
+Synchronous Replication,"Replication is called synchronous, when the standby server processes the received data immediately, sends a confirmation record to the master server and the master server delays its COMMIT action until he has received the confirmation of the standby server."
+Asynchronous Replication,"Replication is called asynchronous, when the master server sends data to the standby server and does not expect any feedback about this action"
+Streaming Replication,The term is used when log entries are transfered from master server to standby server over a TCP connection - in addition to their transfer to the local WAL file. Streaming replication is asynchronous by default but can also be synchronous
+Log-Shipping Replication,Log shipping is the process of transfering WAL files from a master server to a standby server. Log shipping is an asynchronous operation.
+Views,A view is a virtual table based on the results of a SQL statement. This virtual table can be manipulated and queried exactly like a single database table.
+Trigger,"Triggers execute code in response to transactional or other changes to a table or view: when a new item is entered to an inventory table, a similar item could be entered automatically to each of the prices, reviews, and orders tables."
+Primary Key,"Constraints placed on a column in a database that ensure that the field uniquely identifies each separate record (row). Its function is to enforce data integrity. When the primary key is used in queries, it provides faster access to data."
+Partitioning,"Partitioning makes large tables more manageable. This way, you can access or manage only subsets of data, but still maintain the integrity of the table."
+Normalization,"To reduce data reduncancy and improve integrity, databases can be structured according to a set of 'normal forms'. Normalization means that the columns and tables are organized in such a way that their dependencies are enforced by the database's integrity constraints."
+Join,"A JOIN clause combines columns from one or more tables into a new table. In ANSI-standard SQL, the five types of join are INNER, LEFT OUTER, RIGHT OUTER, FULL OUTER AND CROSS."
+Transaction,"A transaction is unit of work applied to a database, containing a sequence of operations."
+Table,"All the data in a database is contained in tables. They are database objects that organize data in rows and columns, rather like a spreadsheet. Each individual record is represented by a row, and the fields it contains are arranged into columns(*)."
+MySQL,"Система управления базами данных (СУБД), использующая язык SQL для работы с данными."
+Реляционная база данных,"База данных, в которой данные организованы в таблицы, связанные между собой."
+Таблица,"Структура данных в базе данных, состоящая из строк и столбцов."
+Строка,"Запись в таблице, состоящая из набора значений для каждого столбца."
+Столбец,"Поле таблицы, определяющее тип данных, которые будут храниться в каждой строке."
+PK (Primary Key),Первичный ключ — уникальный идентификатор для каждой строки в таблице
+FK (Foreign Key),"Внешний ключ — поле, которое ссылается на первичный ключ другой таблицы."
+Индекс,"Структура данных, ускоряющая поиск строк в таблице по определённым полям."
+Запрос,"Операция в SQL для извлечения, изменения, вставки или удаления данных."
+SELECT,SQL-команда для извлечения данных из таблицы.
+INSERT,SQL-команда для вставки новых данных в таблицу.
+UPDATE,SQL-команда для обновления существующих данных в таблице.
+DELETE,SQL-команда для удаления данных из таблицы.
+WHERE,Ключевое слово в SQL для фильтрации данных в запросах.
+JOIN,Операция объединения данных из нескольких таблиц на основе общих полей.
+INNER JOIN,"Объединение таблиц, при котором выводятся только те строки, которые совпадают по значению в обеих таблицах."
+LEFT JOIN,"Объединение таблиц, при котором выводятся все строки из левой таблицы и соответствующие строки из правой."
+RIGHT JOIN,"Объединение таблиц, при котором выводятся все строки из правой таблицы и соответствующие строки из левой."
+FULL OUTER JOIN,"Объединение таблиц, при котором выводятся все строки из обеих таблиц, даже если нет совпадений."
+GROUP BY,Операция группировки строк в таблице по указанным столбцам.
+HAVING,Ключевое слово для фильтрации данных после группировки
+ORDER BY,Операция сортировки данных в запросе.
+LIMIT,Ограничение количества возвращаемых строк в запросе.
+DISTINCT,Операция удаления повторяющихся строк в результатах запроса.
+NULL,"Специальное значение, которое обозначает отсутствие данных в поле."
+AUTO_INCREMENT,"Атрибут, который автоматически увеличивает значение поля при добавлении новой строки"
+DATETIME,Тип данных для хранения даты и времени.
+VARCHAR,Тип данных для хранения строк переменной длины.
+TEXT,Тип данных для хранения длинных текстовых строк
+BOOLEAN,"Тип данных, который может принимать два значения: TRUE или FALSE."
+COUNT(),Агрегатная функция для подсчёта количества строк в наборе данных.
+SUM(),Агрегатная функция для вычисления суммы значений в столбце.
+AVG(),Агрегатная функция для вычисления среднего значения в столбце.
+MIN(),Агрегатная функция для нахождения минимального значения в столбце.
+MAX(),Агрегатная функция для нахождения максимального значения в столбце.
+CREATE DATABASE,Команда для создания новой базы данных.
+DROP DATABASE,Команда для удаления базы данных.
+CREATE TABLE,Команда для создания новой таблицы в базе данных.
+DROP TABLE,Команда для удаления таблицы из базы данных.
+ALTER TABLE,"Команда для изменения структуры таблицы (например, добавление столбцов)."
+TRUNCATE TABLE,Команда для удаления всех данных из таблицы без удаления самой таблицы.
+BACKUP,Процесс создания резервной копии базы данных.
+RESTORE,Процесс восстановления базы данных из резервной копии.
+VIEW,"Представление — виртуальная таблица, создаваемая на основе запроса."
+USER,Пользователь базы данных с определёнными правами доступа.
+GRANT,SQL-команда для предоставления прав пользователю на выполнение операций в базе данных.
+REVOKE,SQL-команда для отмены ранее предоставленных прав пользователю.
+TRANSACTION,"Группа операций, выполняемых как единое целое с возможностью отката."
+COMMIT,SQL-команда для подтверждения транзакции.
+ROLLBACK,SQL-команда для отката транзакции.
+ACID,"Свойства транзакции, которые гарантируют её корректность: атомарность, консистентность, изоляция и долговечность."
+SQL,язык структурированных запросов. При помощи данного языка мы будем производить различные действия с нашими базами данных.
+Данные ,структурированная информация.
+База данных,"совокупность данных, определенных предметной областью. Проще говоря: набор таблиц"
+Таблица (сущность) ,способ хранения информации в реляционной базе данных (минимальная единица измерения в базе данных). Таблицей упрощенно называют отношение в базе данных.
+СУБД ,"система управления базами данных: программа, позволяющая производить различные действия с базами данных."
+Бизнес-правила," формальные правила, которые учитываются при проектировании базы данных. Другими словами: это процесс или набор процессов, которые нам необходимо описать и автоматизировать при помощи базы данных."
+Информационная система , база данных + СУБД и другое ПО + «железо». Некоторые расширяют данное понятие: Информационная система = база данных + СУБД и другое ПО + «железо»+ человек. Некоторые наоборот сужают: Информационная система = база данных + СУБД и другое ПО.
+Предметная область ," часть реального мира, которая описывается или автоматизируется при создании базы данных. Например: склад, магазин, библиотека, автозаправка."
+Клиент,"человек или программа, обращающийся(аяся) к базе данных."
+Ключи или ключевой атрибут ,"атрибут (читай столбец) или набор атрибутов, который однозначно идентифицирует сущность/объект/таблицу в базе данных."
+Первичный ключ," ключ, который используется для идентификации объекта."
+Ключ-кандидат (альтернативный ключ)," ключ, по каким-либо причинам неиспользуемый как первичный."
+Составной ключ ," ключ, который использует несколько атрибутов."
+Суррогатный ключ ,"ключ, значение которого генерируется СУБД."
+Нормальная форма ," свойство отношения в реляционной модели данных, характеризующее его с точки зрения избыточности, потенциально приводящей к логически ошибочным результатам выборки или изменения данных. Нормальная форма определяется как совокупность требований, которым должно удовлетворять отношение. Проще говоря: нормальная форма – это состояние базы данных. В природе вещество может быть в четырех состояниях: жидком, твердом, газообразном и в виде плазмы. И реляционных базах данных отношения могут быть в девяти состояниях."
+Отношение, фундаментальное понятие реляционной модели данных. По этой причине модель и называется реляционной. Грубо говоря: отношение – это таблица.
+Нормализация,"процесс преобразования отношений базы данных к виду, отвечающему нормальным формам. Нормализация предназначена для приведения структуры БД к виду, обеспечивающему минимальную логическую избыточность, и не имеет целью уменьшение или увеличение производительности работы или же уменьшение или увеличение физического объёма базы данных."
+Денормализация,процесс обратный нормализации. Часто применяется для ускорения процесса чтения данных из базы данных.
+Атомарность,"неделимость атрибутов. Например, ФИО не является атомарным столбцом."
+Транзитивная зависимость,"логическая или смысловая зависимость одного атрибута от другого при условии, что ни один из атрибутов не является первичным ключом. Классический пример: город и индекс."
+Функциональная зависимость,"зависимость значений одного столбца от другого, но никак не наоборот. Возьмем два столбца, назовем их А и Б. Все строки, имеющие одинаковое значение атрибута А, будут иметь одинаковое значение в столбце Б, но не наоборот."
+Детерминант функциональной зависимости. , просто – это столбец А из определения термина функциональной зависимости.
+Избыточность," лишняя информация в базе данных, которая не несет никакой пользы для нас, а лишь увеличивает объем базы данных."
+Аномалия,"проблемы, которые возникают при манипуляции с данными (обновление данных, удаление данных, модификация или изменение данных), из-за избыточности."
+Домен данных,"справочник или таблица, в которой хранится вспомогательная информация. Сам я не люблю использовать термин домен данных, поэтому использую справочник."
+Первая нормальная форма (1NF),"Переменная отношения находится в первой нормальной форме (1НФ) тогда и только тогда, когда в любом допустимом значении отношения каждый его кортеж содержит только одно значение для каждого из атрибутов."
+Вторая нормальная форма (2NF),"Переменная отношения находится во второй нормальной форме тогда и только тогда, когда она находится в первой нормальной форме и каждый неключевой атрибут неприводимо (функционально полно) зависит от её потенциального ключа."
+Третья нормальная форма (3NF),"Переменная отношения находится в третьей нормальной форме тогда и только тогда, когда она находится во второй нормальной форме, и отсутствуют транзитивные функциональные зависимости неключевых атрибутов от ключевых."
+Нормальная форма Бойса ,"Кодда (BCNF). Переменная отношения находится в нормальной форме Бойса — Кодда (иначе — в усиленной третьей нормальной форме) тогда и только тогда, когда каждая её нетривиальная и неприводимая слева функциональная зависимость имеет в качестве своего детерминанта некоторый потенциальный ключ."
+Четвёртая нормальная форма (4NF),"Переменная отношения находится в четвёртой нормальной форме, если она находится в нормальной форме Бойса — Кодда и не содержит нетривиальных многозначных зависимостей."
+Пятая нормальная форма (5NF),"Переменная отношения находится в пятой нормальной форме (иначе — в проекционно-соединительной нормальной форме) тогда и только тогда, когда каждая нетривиальная зависимость соединения в ней определяется потенциальным ключом (ключами) этого отношения."
+Доменно-ключевая нормальная форма (DKNF),"Переменная отношения находится в ДКНФ тогда и только тогда, когда каждое наложенное на неё ограничение является логическим следствием ограничений доменов и ограничений ключей, наложенных на данную переменную отношения. Или же: таблица находится в первой нормальной форме, когда каждый ее атрибут атомарен."
+Шестая нормальная форма (6NF),"Переменная отношения находится в шестой нормальной форме тогда и только тогда, когда она удовлетворяет всем нетривиальным зависимостям соединения. Из определения следует, что переменная находится в 6НФ тогда и только тогда, когда она неприводима, то есть не может быть подвергнута дальнейшей декомпозиции без потерь. Каждая переменная отношения, которая находится в 6НФ, также находится и в 5НФ."
+Связь один ко многим.,"Реализуется тогда, когда объекту А может принадлежать или же соответствовать несколько объектов Б, но объекту Б может соответствовать только один объект А. Не совсем понятно, поэтому смотрим пример ниже."
+Связь многие ко многим.,"Связь многие ко многим реализуется в том случае, когда нескольким объектам из таблицы А может соответствовать несколько объектов из таблицы Б, и в тоже время нескольким объектам из таблицы Б соответствует несколько объектов из таблицы А. Рассмотрим простой пример."
+Связь один к одному,"Связь один к одному – самая редко встречаемая связь между таблицами. В 97 случаях из 100, если вы видите такую связь, вам необходимо объединить две таблицы в одну.Таблицы будут связаны связью один к одному тогда, когда одному объекту таблицы А соответствует один объект таблицы Б, и одному объекту таблицы Б соответствует один объект таблицы А."
+Атрибут,элемент данных в кортеже.
+Домен,набор допустимых значений одного или нескольких атрибутов.
+Индекс," объект базы данных, создаваемый с целью повышения производительности выполнения запросов."
+Каталог данных (data directory),хранит информацию о месте и способе хранения данных.
+Концептуальное проектирование ,"сбор, анализ и редактирование требований к данным."
+Реляционная модель данных,"логическая модель данных, строгая математическая теория, описывающая структурный"
+Таблица ,"структура данных, хранящая набор однотипных записей."
+SQL-сервер ,"собирательный термин, относящийся ко всем серверам баз данных, основанных на SQL"
+Блокировка,"запрещение некоторых операций над данными (чаще - корректировки информации), если их обрабатывает (корректирует) другой пользователь"
+Репозиторий,централизованная база данных проекта (см. Словарь данных)
+Реорганизация, изменение физического расположения данных на носителе
+Публикация,"совокупность данных, которые могут подвергаться тиражированию"
+Группа пользователей," пользователи, наделенные одинаковым набором привилегий"
+ER-модель,"модель предметной области, отражающая объекты и связи между ними (синонимы: модель «сущность-связь», модель «объект-свойство-связь», концептуальная модель)"
+SELECT,Оператор для выборки данных из таблицы.
+INSERT,Оператор для добавления новых записей в таблицу.
+UPDATE,Оператор для изменения данных в таблице.
+DELETE,Оператор для удаления данных из таблицы.
+CREATE,"Оператор для создания новых объектов (таблиц, баз данных и т.д.)."
+ALTER,Оператор для изменения структуры существующих объектов.
+DROP,"Оператор для удаления объектов (таблиц, баз данных и т.д.)."
+TRUNCATE,Оператор для удаления всех данных из таблицы (но сохраняет структуру).
+JOIN,Оператор для объединения таблиц по общим столбцам.
+INNER JOIN,"Оператор для объединения строк из двух таблиц, если существуют совпадения."
+LEFT JOIN,Оператор для объединения всех строк из левой таблицы с совпадениями из правой.
+RIGHT JOIN,Оператор для объединения всех строк из правой таблицы с совпадениями из левой.
+FULL JOIN,Оператор для объединения всех строк из обеих таблиц.
+WHERE,Оператор для фильтрации строк по условию.
+GROUP BY,Оператор для группировки строк по столбцам.
+HAVING,Оператор для фильтрации данных после группировки.
+ORDER BY,Оператор для сортировки данных.
+DISTINCT,Оператор для удаления дубликатов в выборке.
+LIMIT,Оператор для ограничения количества строк в результате выборки.
+OFFSET,Оператор для пропуска определённого количества строк в выборке.
+IN,"Оператор для проверки, содержится ли значение в наборе значений."
+BETWEEN,"Оператор для проверки, лежит ли значение в диапазоне."
+LIKE,Оператор для поиска с шаблоном.
+IS NULL,"Оператор для проверки, является ли значение NULL."
+AND,Логический оператор для соединения условий.
+OR,Логический оператор для соединения условий с альтернативой.
+NOT,Логический оператор для инвертирования условия.
+UNION,Оператор для объединения результатов двух запросов.
+EXCEPT,Оператор для нахождения разницы между результатами двух запросов.
+INTERSECT,Оператор для нахождения общих элементов между результатами двух запросов.
+CASE,Оператор для выполнения условных выражений в запросах.
+CAST,Оператор для преобразования данных одного типа в другой.
+CONVERT,Оператор для преобразования данных в другой тип.
+COALESCE,Функция для возвращения первого ненулевого значения из списка.
+NULLIF,"Функция для возврата NULL, если два значения равны."
+EXPLAIN,Оператор для получения плана выполнения запроса.
+LOCK,Оператор для блокировки таблицы или строк.
+SAVEPOINT,Оператор для создания точки сохранения в транзакции.
+COMMIT,Оператор для фиксации транзакции.
+ROLLBACK,Оператор для отката транзакции.
+GRANT,Оператор для предоставления прав доступа пользователю.
+REVOKE,Оператор для отзыва прав доступа у пользователя.
+SET,Оператор для изменения настроек сеанса или переменных.
+SHOW,Оператор для отображения информации о базе данных.
+DESCRIBE,Оператор для отображения структуры таблицы.
+USE,Оператор для выбора базы данных для текущей сессии.
+TRIGGER,"Оператор для создания триггера, выполняющегося автоматически при изменении данных."
+VIEW,Оператор для создания виртуальной таблицы (представления).
+INDEX,Оператор для создания индекса на таблице для ускорения поиска.
+ALTER INDEX,Оператор для изменения или удаления индекса.
+Индекс (Index),"Структура данных, используемая для ускорения поиска и извлечения данных в базе данных."
+B-дерево (B-tree),"Один из самых популярных типов индексов, используемый в реляционных базах данных для организации поиска данных."
+B+ дерево (B+ tree),"Модификация B-дерева, где все данные находятся только в листьях, а внутренние узлы содержат только ключи."
+Хеш-индекс (Hash Index),"Индекс, использующий хеш-функцию для быстрого поиска значений в базе данных."
+Уникальный индекс (Unique Index),"Индекс, который гарантирует, что все значения в индексируемом столбце уникальны."
+Композитный индекс (Composite Index),"Индекс, состоящий из нескольких столбцов, что позволяет ускорить запросы с несколькими критериями поиска."
+Полнотекстовый индекс (Full-text Index),"Индекс, используемый для ускоренного поиска по текстовым данным, например, для поиска подстрок в длинных текстах."
+Кластеризованный индекс (Clustered Index),"Индекс, при котором данные в таблице сортируются и хранятся в порядке, заданном индексом."
+Некластеризованный индекс (Non-clustered Index),"Индекс, который содержит указатели на строки данных, но не изменяет физический порядок данных в таблице."
+Инвертированный индекс (Inverted Index),"Индекс, используемый в поисковых системах для быстрого поиска по ключевым словам в больших текстовых данных."
+Индекс на основе деревьев (Tree-based Index),"Индекс, использующий структуру дерева (например, B-дерево) для организации быстрого поиска."
+Индекс с префиксами (Prefix Index),"Индекс, создающийся по начальной части значения, например, первых нескольких символов в строке."
+Индекс с фильтром (Filtered Index),"Индекс, который создается только для подмножества данных, удовлетворяющих определенному условию."
+Косвенный индекс (Secondary Index),"Индекс, который создается для столбцов, не являющихся частью первичного ключа таблицы."
+Индекс с уникальными значениями (Unique Index),"Индекс, который предотвращает дублирование значений в столбце, что используется для обеспечения уникальности данных."
+Индекс с обратной связью (Reverse Index),"Индекс, где порядок значений инвертируется для ускорения поиска."
+Многоверсионный индекс (Multiversion Index),"Индекс, поддерживающий различные версии данных, что полезно в многопользовательских системах."
+Индекс с выборками (Sampled Index),"Индекс, который используется для частичного индексирования данных на основе выборки."
+Индекс с отсечением (Truncated Index),"Индекс, в котором хранятся только части данных, например, только первые 10 символов в строке."
+Индекс с распределением (Distributed Index),"Индекс, который распределяется между несколькими серверами или базами данных для увеличения производительности."
+Бинарный индекс (Binary Index),"Индекс, который использует бинарный поиск для организации данных и ускорения поиска."
+Индекс с множественными значениями (Multivalue Index),"Индекс, поддерживающий хранение и поиск по множественным значениям в одном столбце (например, для массивов или списков)."
+Индекс на строковых данных (String Index),"Индекс, специально предназначенный для быстрого поиска по строковым данным в базе данных."
+Индекс на числовых данных (Numeric Index),"Индекс, предназначенный для быстрого поиска по числовым данным, например, целым числам или вещественным числам."
+Индекс для географических данных (Spatial Index),"Индекс, используемый для ускорения поиска географических или пространственных данных."
+Индекс для временных данных (Temporal Index),"Индекс, оптимизированный для работы с временными метками или датами."
+Индекс с асимптотической сложностью (Asymptotic Index),"Индекс, эффективность которого определяется сложностью алгоритмов поиска и сортировки."
+Инкрементальный индекс (Incremental Index),"Индекс, который автоматически обновляется по мере добавления новых данных в таблицу."
+Индекс с динамическим сжатием (Dynamic Compression Index),"Индекс, который использует алгоритмы сжатия данных для экономии пространства и увеличения производительности."
+Индекс для партиционированных таблиц (Partitioned Table Index),"Индекс, предназначенный для работы с таблицами, разделенными на несколько частей (партиций)."
+Индекс с кластеризацией по времени (Time-based Clustered Index),"Индекс, который используется для кластеризации данных по времени, что улучшает поиск по временным диапазонам."
+Индекс для аналитических запросов (Analytical Query Index),"Индекс, оптимизированный для сложных аналитических запросов, например, с агрегатами или подзапросами."
+Индекс для систем с высокой нагрузкой (High-load Index),"Индекс, специально оптимизированный для работы с большими объемами данных и высокой нагрузкой на базу данных."
+Реализованный индекс (Materialized Index),"Индекс, в котором результаты запросов заранее вычисляются и сохраняются для повышения производительности."
+Индекс для объединенных таблиц (Join Index),"Индекс, оптимизирующий запросы, использующие соединения (JOIN) между таблицами."
+Индекс для периодических данных (Periodic Data Index),"Индекс, используемый для быстрого поиска по данным, которые периодически обновляются или имеют регулярную структуру."
+Индекс с динамическим распределением (Dynamic Range Index),"Индекс, который позволяет эффективно управлять диапазонами данных, как для числовых, так и для строковых значений."
+Мультиуровневый индекс (Multilevel Index),"Индекс, который использует несколько уровней иерархии для ускоренного поиска."
+Индекс по нескольким столбцам (Multicolumn Index),"Индекс, который включает в себя несколько столбцов, что улучшает производительность запросов, использующих несколько условий."
+Индекс с обратной индексацией (Reverse Indexing),"Индекс, в котором данные индексируются в обратном порядке, что помогает ускорить определенные типы запросов."
+Индекс с задержкой (Lazy Indexing),"Индекс, который создается или обновляется только по мере необходимости, а не сразу при добавлении данных."
+Индекс для высокоскоростных запросов (High-speed Query Index),"Индекс, который оптимизирован для максимально быстрого выполнения запросов в реальном времени."
+Индекс с синхронизацией (Synchronized Index),"Индекс, который синхронизируется с изменениями в таблице данных для обеспечения актуальности информации."
+Многомерный индекс (Multidimensional Index),"Индекс, используемый для данных с несколькими атрибутами или измерениями, например, для географических или научных данных."
+Индекс для большого объема данных (Big Data Index),"Индекс, предназначенный для работы с большими объемами данных, эффективно обрабатывающий запросы в таких системах."
+Индекс с пакетной обработкой (Batch Processing Index),"Индекс, оптимизированный для обработки больших пакетов данных в пакетном режиме."
+Индекс для распределенных систем (Distributed Index),"Индекс, который используется в распределенных базах данных и хранилищах данных для ускорения поиска."
+Алгоритм индексирования (Indexing Algorithm),"Способ организации и построения индекса, который определяет его структуру и эффективность."
+Индекс с блокировками (Locking Index),"Индекс, который использует механизмы блокировки для управления параллельными запросами и обеспечения целостности данных."
+Индекс с хранением истории (Historical Index),"Индекс, который сохраняет историю изменений данных, позволяя эффективно искать данные на разных этапах времени."
+База данных (БД),"Совместная, интегрированная компьютерная структура, которая хранит коллекцию данных, включая необработанные факты интересующие конечного пользователя (данные пользователя) и метаданные (данные о данных)."
+Система управления базами данных (СУБД),"Коллекция программ, управляющих структурой базы данных и контролирующих доступ к данным, хранящимся в базе данных."
+Однопользовательская база данных,"База данных, поддерживающая работу только одного пользователя в данный момент времени."
+Персональная база данных,"Однопользовательская база данных, работающая на персональном компьютере."
+Многопользовательская база данных,"База данных, поддерживающая работу нескольких пользователей одновременно."
+База данных рабочего подразделения,"Многопользовательская база данных, поддерживающая небольшое количество пользователей или конкретное подразделение организации."
+Централизованная база данных,"База данных, поддерживающая данные, расположенные на одном сайте."
+Распределенная база данных,"База данных, поддерживающая данные, распределенные на нескольких различных сайтах."
+Облачная база данных,"База данных, созданная и поддерживаемая с использованием облачных сервисов данных, таких как Microsoft Azure или Amazon AWS, где инфраструктура для хранения данных не является заботой владельца данных."
+База данных общего назначения,"База данных, содержащая различные данные, используемые в нескольких областях (например, данные переписи населения, базы данных LexisNexis и ProQuest)."
+База данных специализированного назначения,"База данных, содержащая данные, ориентированные на конкретные предметные области, используемые в основном для научных или исследовательских целей."
+Нормализация,Процесс оценки и исправления структуры таблиц базы данных с целью минимизации избыточности данных и снижения вероятности возникновения аномалий в данных.
+"Моделирование ""сущность-связь"" (ER-моделирование)",Метод проектирования структуры базы данных путем определения сущностей и связей между ними.
+Нормальная форма (НФ),"Этапы процесса нормализации, включая 1NF (первая нормальная форма), 2NF (вторая нормальная форма) и 3NF (третья нормальная форма)."
+Денормализация,"Процесс уменьшения уровня нормализации в проектировании базы данных с целью улучшения производительности, но за счет увеличения избыточности данных."
+Первичный ключ,"Уникальный идентификатор для каждой записи в таблице, который гарантирует уникальность данных."
+Внешний ключ,"Поле в одной таблице, которое связано с первичным ключом другой таблицы, создавая связь между ними."
+Один к одному,"Тип связи, когда одна запись в одной таблице соответствует только одной записи в другой таблице."
+Один ко многим,"Тип связи, когда одна запись в одной таблице может соответствовать нескольким записям в другой таблице."
+Многие ко многим,"Тип связи, когда несколько записей в одной таблице могут быть связаны с несколькими записями в другой таблице, что обычно реализуется через таблицу-соединитель."
+Таблица-соединитель,"Таблица, используемая для преобразования связи многие ко многим в несколько связей один ко многим."
+Типы данных,"Специфичные форматы для хранения различных типов данных в базе данных, такие как числовые значения, текст и даты."
+serial,"Числовой тип данных представляет собой автоматически увеличиваемое числовое значение, занимающее 4 байта и способное хранить числа от 1 до 2147483647. Значение этого типа формируется путём автоинкремента значения предыдущей строки. Обычно используется для определения идентификаторов строк."
+smallserial,"Числовой тип данных Числовой тип данных представляет собой автоматически увеличиваемое числовое значение, занимающее 2 байта и способное хранить числа от 1 до 32767. Аналогично типу serial, но для малых чисел."
+bigserial,"Числовой тип данных представляет собой автоматически увеличиваемое числовое значение, занимающее 8 байтов и способное хранить числа от 1 до 9223372036854775807. Аналогично типу serial, но для больших чисел."
+smallint,Числовой тип данных хранит числа от -32768 до +32767. Занимает 2 байта. Имеет псевдоним int2.
+integer,Числовой тип данных хранит числа от -2147483648 до +2147483647. Занимает 4 байта. Имеет псевдонимы int и int4.
+numeric,"Числовой тип данных хранит числа с фиксированной точностью, которые могут иметь до 131072 цифр в целой части и до 16383 цифр после десятичной точки. Этот тип может принимать два параметра: precision (точность) и scale (масштаб)."
+precision,"максимальное количество цифр, которое может хранить число."
+scale,максимальное количество цифр после запятой. Этот параметр должен быть между 0 и значением precision. По умолчанию scale равен 0.
+decimal,"Числовой тип данных хранит числа с фиксированной точностью, аналогично типу numeric."
+real,Числовой тип данных хранит числа с плавающей точкой в диапазоне от 1E-37 до 1E+37. Занимает 4 байта. Имеет псевдоним float4.
+double precision,Числовой тип данных хранит числа с плавающей точкой в диапазоне от 1E-307 до 1E+308. Занимает 8 байтов. Имеет псевдоним float8.
+money,Числовой тип данных используется для работы с денежными единицами. Может хранить значения в диапазоне от -92233720368547758.08 до +92233720368547758.07 и занимает 8 байтов.
+character(n),"представляет строку фиксированной длины, где параметр n указывает количество символов в строке. Имеет псевдоним char(n)."
+character varying(n),"представляет строку переменной длины, где параметр n указывает максимальное количество символов в строке. Имеет псевдоним varchar(n)."
+text,представляет текст произвольной длины.
+bytea,"хранит бинарные данные. Представляет данные как бинарные строки, которые являются последовательностью октетов (байтов)."
+timestamp,хранит дату и время. Занимает 8 байтов. Диапазон дат: от 4713 года до нашей эры до 294276 года нашей эры.
+timestamp with time zone,"тот же тип, что и timestamp, но с добавлением информации о часовом поясе."
+date,хранит дату в диапазоне от 4713 года до нашей эры до 5874897 года нашей эры. Занимает 4 байта.
+time,"хранит время с точностью до 1 микросекунды, без указания часового пояса. Принимает значения от 00:00:00 до 24:00:00. Занимает 8 байтов."
+time with time zone,хранит время с точностью до 1 микросекунды и информацией о часовом поясе. Принимает значения от 00:00:00+1459 до 24:00:00-1459. Занимает 12 байтов.
+interval,представляет временной интервал. Занимает 16 байтов.
+boolean,"может хранить одно из двух значений: true (истина) или false (ложь). Можно использовать следующие эквиваленты: Для true: TRUE, 't', 'true', 'y', 'yes', 'on', '1'. Для false: FALSE, 'f', 'false', 'n', 'no', 'off', '0'."
+cidr,"интернет-адрес в формате IPv4 или IPv6 (например, 192.168.0.1). Занимает от 7 до 19 байтов."
+inet,"интернет-адрес в формате cidr/y, где cidr — это IPv4 или IPv6 адрес, а /y — количество бит в адресе. Например, 192.168.0.1/24 или 2001:4f8:3:ba:2e0:81ff:fe22:d1f1/128. Занимает от 7 до 19 байтов."
+macaddr,хранит MAC-адрес. Занимает 6 байтов.
+macaddr8,хранит MAC-адрес в формате EUI-64. Занимает 8 байтов.
+point,"представляет точку на плоскости в формате (x,y). Занимает 16 байтов."
+line,"представляет прямую бесконечной длины в формате {A,B,C}. Занимает 32 байта."
+lseg,"представляет отрезок прямой в формате ((x1,y1),(x2,y2)). Занимает 32 байта."
+box,"представляет прямоугольник в формате ((x1,y1),(x2,y2)). Занимает 32 байта."
+path,"представляет множество соединенных точек. В формате ((x1,y1),...) путь может быть замкнутым (первая и последняя точка соединены прямой) и фактически является многоугольником. В формате [(x1,y1),...] путь будет открытым. Занимает 16 + 16n байтов."
+polygon,"представляет многоугольник в формате ((x1,y1),...). Занимает 40 + 16n байтов."
+circle,"представляет окружность в формате <(x,y),r>. Занимает 24 байта."
+json,хранит данные в формате JSON в текстовом виде.
+jsonb,хранит данные в формате JSON в бинарном виде.
+uuid,"хранит уникальный универсальный идентификатор (UUID), например, a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11. Занимает 32 байта."
+xml,хранит данные в формате XML.
+База данных (БД),"Организованный набор данных, хранящийся в структурированной форме и предназначенный для удобного поиска, хранения и обработки информации."
+Система управления базами данных (СУБД),"Программное обеспечение, обеспечивающее создание, управление и взаимодействие с базой данных. Примеры: MySQL, PostgreSQL, Oracle."
+Таблица,"Основная структура хранения данных в реляционной базе данных, состоящая из строк (записей) и столбцов (полей)."
+Запись (Строка),"Единичная строка в таблице, содержащая конкретные данные, относящиеся к объекту."
+Поле (Столбец),"Отдельный элемент данных в таблице, содержащий однотипные значения."
+"Первичный ключ (Primary Key, PK)","Уникальный идентификатор записи в таблице, обеспечивающий однозначную идентификацию данных."
+"Внешний ключ (Foreign Key, FK)","Поле, ссылающееся на первичный ключ другой таблицы, создающее связь между таблицами."
+Индекс,"Структура данных, ускоряющая выполнение запросов за счёт оптимизированного поиска записей."
+Нормализация,Процесс организации данных для минимизации избыточности и предотвращения аномалий при изменении данных.
+Денормализация,"Обратный процесс нормализации, объединяющий данные для ускорения выполнения запросов."
+Схема базы данных,"Описание структуры базы данных, включающее таблицы, связи между ними, ограничения и индексы."
+SQL (Structured Query Language),"Язык запросов, предназначенный для управления и манипулирования данными в реляционной базе данных."
+Запрос,Инструкция на языке SQL для получения или изменения данных в базе данных.
+SELECT,Оператор SQL для выборки данных из базы данных.
+INSERT,Оператор SQL для добавления новых записей в таблицу базы данных.
+UPDATE,Оператор SQL для изменения существующих записей в таблице.
+DELETE,Оператор SQL для удаления записей из таблицы.
+JOIN,"Операция SQL, объединяющая строки из двух или более таблиц на основе общего поля."
+INNER JOIN,"Оператор SQL, возвращающий только совпадающие записи из объединяемых таблиц."
+LEFT JOIN,"Оператор SQL, включающий все записи из левой таблицы и совпадающие записи из правой."
+RIGHT JOIN,"Оператор SQL, включающий все записи из правой таблицы и совпадающие записи из левой."
+FULL JOIN,"Оператор SQL, возвращающий все записи из обеих таблиц, независимо от совпадений."
+Транзакция,"Группа операций в базе данных, выполняемых как единое целое, с возможностью фиксации или отмены."
+ACID,"Набор свойств транзакций: атомарность (Atomicity), согласованность (Consistency), изоляция (Isolation) и долговечность (Durability)."
+COMMIT,"Оператор SQL, фиксирующий изменения в базе данных и делая их постоянными."
+ROLLBACK,"Оператор SQL, отменяющий изменения, сделанные в рамках транзакции."
+CASCADE DELETE,Механизм автоматического удаления связанных данных при удалении основной записи.
+Представление (VIEW),"Виртуальная таблица, создаваемая на основе SQL-запроса и не хранящая данные самостоятельно."
+Хранимая процедура (Stored Procedure),"Программный код, хранимый и выполняемый на сервере базы данных для автоматизации обработки данных."
+Ключ,"поле или суперпозиция несколько полей и\или их фрагментов (называемых ключевыми), однозначно определяющая запись таблицы."
+Первичный ключ ,"поле однозначно определяющее запись (экземпляр сущности), используется для связи с другими таблицами. Значения этого поля должны быть уникальны в пределах таблицы. Такой ключ может быть только один на таблицу. В реальных БД в качестве первичных используются суррогатные ключи."
+Вторичный ключ ,"поле, содержащее значение уникального ключа, который может быть первичным, но не является оным, поскольку первичный ключ только один."
+Внешний ключ ,"поле дочерней таблицы, которое содержит значение первичного ключа родительской таблицы (атрибут “Код подразделения” сущности “СОТРУДНИК” является внешним ключом, т. к. он содержит значение первичного ключа в родительской таблице “ПОДРАЗДЕЛЕНИЕ”)."
+Родительская таблица (сущность) ,"таблица содержащая первичный ключ используемой в связи (см.), значение которого записывается в поле внешнего ключа дочерней таблицы."
+Дочерняя таблица (сущность) ,- таблица в которой присутствует внешний ключ используемой в связи (см.) и содержащий значение первичного ключа родительской таблицы
+Связь,"между родительской и дочерней таблицами (сущностями) это сопоставление записей, которое производится по равенству значений внешнего и первичного ключей в обеих таблицах."
+"Связь типа “Один-к-одному”, или бинарная связь (1:1). ",Одной записи (экземпляру) родительской таблицы (сущности) соответствует одна запись (экземпляр) дочерней таблицы (сущности).
+Связь типа “Один-ко-многим” (1:М),Одной записи родительской таблицы соответствует несколько записей дочерней таблицы. При этом внешний ключ участвующий в связи не уникален.
+Связь типа “Многие-ко-многим” (М:М),Одному экземпляру родительской сущности соответствуют несколько экземпляров дочерней сущности и наоборот одному экземпляру дочерней сущности соответствуют несколько экземпляров родительской сущности
+Блокировка записей ,"процесс предотвращения доступа к данным изменяемым транзакцией, пока она не будет закончена. Средства блокировки обеспечивают безопасность данных в случае параллельной обработки данных."
+Триггер,"хранимая процедура особого типа, которую пользователь не вызывает непосредственно, а исполнение которой обусловлено действием по модификации данных: добавлением INSERT, удалением DELETE строки в заданной таблице, или изменением UPDATE данных в определенном столбце заданной таблицы реляционной базы данных."
+Нормализация,"это разбиение таблицы на две или более, обладающие лучшими свойствами при включении, изменении и удалении данных. Окончательная цель нормализации сводится к получению такого проекта базы данных, в котором каждый атрибут появляется лишь в одном месте, т.е. исключена избыточность информации."
+Срез ,"подмножество гиперкуба (см.), полученное в результате фиксации одного или нескольких измерений."
+Вращение,вращение гиперкуба (см.) при этом местоположение отдельных осей меняются местами.
+Агрегация/детализация ,переход к более общему/детальному представлению информации по параметрам агрегируемости (см.).
+Распределенная база данных ,"это совокупность логически взаимосвязанных баз данных, распределенных в компьютерной сети. Распределенная база данных может объединять базы данных, поддерживающие любые модели (иерархические, сетевые, реляционные и объектно-ориентированные базы данных) в рамках единой глобальной схемы. Подобная конфигурация должна обеспечивать для всех приложений прозрачный доступ к любым данным независимо от их местоположения и формата."
+Администратор СУБД (DBA) ,"лицо или группа лиц, ответствен­ная за развертывание, бесперебойную эксплуатацию и эффективное использование СУБД."
+Концептуальная модель БД ,это совокупность сущностей и их взаимосвязей вне зависимости от конкретной СУБД.
+Логическая модель БД ,это концептуальная модель в терминах конкретной СУБД.
+Локальная архитектура СУБД,приложение и база находятся на одном компьютере.
+SQL,"Язык структурированных запросов, используемый для управления данными в реляционных базах данных."
+PostgreSQL,Открытая объектно-реляционная система управления базами данных.
+PL/pgSQL,"Процедурный язык, используемый в PostgreSQL для написания хранимых процедур и функций."
+PL/SQL,"Процедурный язык, используемый в Oracle Database для написания хранимых процедур и триггеров."
+DDL,"Язык определения данных (Data Definition Language), включающий команды CREATE, ALTER, DROP."
+DML,"Язык манипулирования данными (Data Manipulation Language), включающий команды INSERT, UPDATE, DELETE."
+DCL,"Язык управления доступом к данным (Data Control Language), включает GRANT и REVOKE."
+TCL,"Язык управления транзакциями (Transaction Control Language), включает COMMIT, ROLLBACK, SAVEPOINT."
+Первичный ключ,Уникальный идентификатор строки в таблице.
+Внешний ключ,"Поле, связывающее две таблицы и обеспечивающее целостность данных."
+Индекс,"Структура данных, ускоряющая выполнение запросов в базе данных."
+Представление (View),"Виртуальная таблица, создаваемая на основе результата запроса."
+Триггер,"Объект базы данных, который автоматически выполняет определенные действия при изменении данных."
+Хранимая процедура,"Программа, хранящаяся в базе данных и выполняемая сервером."
+Функция,"Программный объект, выполняющий вычисления и возвращающий значение."
+Курсор,"Объект для построчной обработки набора данных, полученного в результате запроса."
+JOIN,"Оператор SQL, используемый для объединения строк из двух или более таблиц на основе общего поля."
+INNER JOIN,"Тип JOIN, возвращающий только совпадающие записи из объединяемых таблиц."
+LEFT JOIN,"Тип JOIN, возвращающий все записи из левой таблицы и соответствующие записи из правой."
+RIGHT JOIN,"Тип JOIN, возвращающий все записи из правой таблицы и соответствующие записи из левой."
+FULL JOIN,"Тип JOIN, объединяющий все записи из обеих таблиц, заполняя пропущенные значения NULL."
+GROUP BY,"Оператор SQL, группирующий строки с одинаковыми значениями и выполняющий агрегатные функции."
+HAVING,"Оператор SQL, фильтрующий результаты после группировки."
+ORDER BY,"Оператор SQL, сортирующий результаты запроса по указанному столбцу."
+Подзапрос (Subquery),"SQL-запрос, вложенный в другой запрос."
+Нормализация,Процесс оптимизации структуры базы данных для устранения избыточности и зависимостей.
+Денормализация,Процесс внесения избыточности в базу данных для повышения скорости выполнения запросов.
+ACID,"Набор свойств транзакций: атомарность, согласованность, изолированность, долговечность."
+Репликация,Копирование данных из одной базы данных в другую для повышения доступности и отказоустойчивости.
+Партиционирование,Разделение таблицы на логические части для повышения производительности запросов.
+Индексация,Создание индексов для ускорения поиска данных в базе данных.
+VACUUM,"Команда PostgreSQL, очищающая и оптимизирующая базу данных."
+Checkpoint,"Механизм в PostgreSQL, обеспечивающий запись данных из журнала WAL в основную базу."
+WAL,"Write-Ahead Logging – механизм, гарантирующий сохранность данных в случае сбоя."
+Connection Pooling,Метод оптимизации соединений с базой данных для повышения производительности.
+EXPLAIN,"Команда SQL, анализирующая и отображающая план выполнения запроса."
+Материализованное представление,Сохраненная копия результата запроса.
+Табличное пространство (Tablespace),Физическое хранилище объектов базы данных на диске.
+Схема,"Логическая структура базы данных, содержащая таблицы, индексы и другие объекты."
+Ограничение (Constraint),"Ограничение, обеспечивающее соблюдение целостности данных в таблице."
+Взаимная блокировка (Deadlock),"Ситуация, при которой два процесса блокируют друг друга, ожидая освобождения ресурсов."
+Шардинг,"Метод горизонтального масштабирования базы данных, при котором данные распределяются по узлам."
+CTE (Common Table Expression),"Временный набор данных, используемый в сложных запросах."
+Временная таблица,"Таблица, доступная только в текущей сессии базы данных."
+Последовательность (Sequence),"Объект базы данных, генерирующий уникальные последовательности чисел."
+Откат (Rollback),Откат транзакции до последней зафиксированной точки.
+Точка сохранения (Savepoint),"Метка внутри транзакции, к которой можно откатиться без отмены всей транзакции."
+Уровни изоляции (Isolation Levels),Различные уровни изолированности транзакций в СУБД.
+Кластерный индекс,"Индекс, который определяет физический порядок строк в таблице."
+Некластерный индекс,"Индекс, который не изменяет физический порядок строк в таблице."
+База данных,"Организованное хранилище данных, предназначенное для удобного управления и обработки."
+Реляционная база данных,"Тип базы данных, где данные организованы в таблицы с отношениями между ними."
+NoSQL,"Тип баз данных, не использующих реляционную модель, ориентированный на масштабируемость и производительность."
+Key-Value Store,"Тип NoSQL базы данных, где данные хранятся в виде пар ключ-значение."
+Документо-ориентированная база данных,"Тип NoSQL базы данных, хранящей данные в виде документов (например, JSON, BSON)."
+Графовая база данных,"Тип базы данных, предназначенный для работы с графовыми структурами данных."
+OLAP,"Онлайн-аналитическая обработка, предназначенная для многомерного анализа данных."
+OLTP,"Онлайн-обработка транзакций, оптимизированная для быстрого выполнения множества транзакций."
+JSONB,Формат хранения JSON-документов в PostgreSQL с возможностью индексирования.
+XML,"Формат структурированных данных, который может использоваться в базах данных."
+UUID,"Уникальный универсальный идентификатор, часто используемый в качестве первичного ключа."
+BLOB,"Двоичный крупный объект, используемый для хранения мультимедийных файлов в базе данных."
+CLOB,"Символьный крупный объект, используемый для хранения больших текстовых данных."
+Хеш-индекс,"Тип индекса, использующий хеширование для быстрого поиска записей."
+Гистограммы (Histogram),"Статистический инструмент, используемый оптимизатором запросов для анализа данных."
+Буферный пул,"Область оперативной памяти, используемая для кеширования данных базы данных."
+Query Cache,Механизм кеширования результатов SQL-запросов для ускорения работы базы данных.
+Оптимизация запросов,Процесс улучшения производительности SQL-запросов путем их анализа и модификации.
+Anomaly,"Аномалии данных, возникающие из-за несоответствия нормализационным правилам."
+Фрагментация данных,"Разделение данных на мелкие части, что может снизить производительность запросов."
+Кластеризация данных,Группировка схожих данных для повышения производительности работы с базой данных.
+JSON Path,Функционал для работы с JSON-данными в PostgreSQL.
+Foreign Data Wrapper (FDW),Механизм в PostgreSQL для доступа к внешним базам данных.
+Миграция базы данных,Процесс переноса структуры и данных базы данных с одной системы на другую.
+Шардирование,Метод распределения данных между несколькими серверами для масштабирования базы данных.
+Зеркалирование (Mirroring),Технология создания резервной копии базы данных в режиме реального времени.
+Бэкап базы данных,Процесс создания резервной копии базы данных для защиты от потери данных.
+Восстановление базы данных,Процесс возврата базы данных к предыдущему состоянию после сбоя.
+Multiversion Concurrency Control (MVCC),Механизм в PostgreSQL для управления конкурентным доступом к данным.
+Autovacuum,"Функция PostgreSQL, автоматически выполняющая очистку и оптимизацию базы данных."
+Log Shipping,"Метод репликации, основанный на передаче журналов транзакций."
+Connection Timeout,Время ожидания подключения к базе данных перед его завершением.
+Tablespace Quota,"Ограничение на объем дискового пространства, выделенного под базы данных."
+Reindex,Команда PostgreSQL для пересоздания индексов и повышения их эффективности.
+Функция агрегирования,"Функция SQL, выполняющая вычисления на множестве значений (SUM, AVG, COUNT)."
+Функция окна (Window Function),"Функция SQL, выполняющая вычисления на основе набора строк."
+Разделяемая блокировка,"Тип блокировки базы данных, позволяющий нескольким процессам читать данные."
+Эксклюзивная блокировка,"Тип блокировки базы данных, запрещающий доступ другим процессам."
+Курсорная блокировка,"Блокировка, применяемая к строкам, обрабатываемым курсором."
+Materialized Query Table (MQT),Аналог материализованного представления в других СУБД.
+Implicit Join,Автоматическое объединение таблиц без явного указания оператора JOIN.
+Parallel Query Execution,Параллельное выполнение SQL-запросов для ускорения обработки.
+Query Planner,"Компонент базы данных, определяющий оптимальный способ выполнения SQL-запросов."
+Блокировка строк,Механизм предотвращения конфликтов при изменении строк таблицы.
+Dead Tuple,"Неиспользуемая строка в PostgreSQL, которая требует очистки."
+Database Collation,Настройки сортировки и сравнения строк в базе данных.
+BigInt,Тип данных для хранения больших целых чисел.
+Time Series Database,"База данных, оптимизированная для хранения временных рядов (например, Prometheus, TimescaleDB)."
+Домены данных,"Ограниченный набор значений, допустимых для определенного атрибута."
+Кардинальность,Число допустимых связей между записями двух таблиц.
+Область видимости,"Границы, в которых переменная, объект или функция доступны в SQL."
+Декомпозиция,Разделение одной таблицы на несколько для устранения избыточности данных.
+Агрегирование,Объединение данных из разных записей для получения сводной информации.
+Каскадное удаление,Автоматическое удаление связанных записей при удалении родительской записи.
+Каскадное обновление,Автоматическое обновление значений внешнего ключа при изменении родительской записи.
+Дедупликация,Процесс удаления дублирующихся данных из таблицы.
+Хэш-индекс,"Индекс, использующий хеш-функции для быстрого поиска данных."
+B-дерево,"Структура индекса, обеспечивающая эффективный поиск данных в БД."
+Фрагментация,Разделение данных на логические сегменты для оптимизации работы БД.
+Запрос (Query),"Инструкция SQL для получения, обновления или удаления данных."
+Оптимизация запроса,Процесс улучшения производительности SQL-запросов.
+Кеширование запросов,Хранение результатов часто выполняемых запросов для ускорения работы БД.
+Подзапрос (Subquery),"Запрос, выполняемый внутри другого SQL-запроса."
+Коррелированный подзапрос,"Подзапрос, использующий данные из основного запроса."
+Функциональный индекс,"Индекс, создаваемый на основе вычислений или функций в SQL."
+Расширенный поиск,"Поиск данных с использованием фильтров, регулярных выражений и операторов."
+Текстовый поиск (Full-Text Search),Метод поиска данных в текстовых полях с учетом релевантности.
+Фильтрация данных,Отбор записей из таблицы по заданным условиям.
+Разрешение конфликтов,Методы предотвращения и устранения конфликтов данных в БД.
+Изоляция транзакций,Уровень контроля параллельных транзакций для предотвращения ошибок.
+Фантомные чтения,"Ошибка при одновременной работе с данными, когда новая запись изменяет результаты запроса."
+Грязное чтение,"Чтение данных, которые еще не были зафиксированы в БД."
+Двойная запись,"Проблема, возникающая при дублировании данных в БД."
+Псевдоним (Alias),Временное имя для таблицы или столбца в SQL-запросе.
+Проекция данных,Выборка конкретных столбцов из таблицы без дублирования.
+Модификация схемы,"Изменение структуры базы данных (добавление, удаление, изменение столбцов)."
+Временная таблица,"Таблица, создаваемая для временного хранения данных в рамках сеанса."
+Логическая репликация,Механизм копирования изменений данных между базами без физического дублирования.
+Физическая репликация,Процесс синхронизации баз данных на уровне файлов.
+Журнал транзакций,"Файл, содержащий историю изменений, выполненных в базе данных."
+Блокировка строк,Механизм предотвращения одновременного изменения одной и той же записи.
+Блокировка таблицы,Полная блокировка таблицы для предотвращения изменений другими транзакциями.
+Режим строгой изоляции,Полный запрет на параллельные изменения данных в БД.
+Снимок (Snapshot),Сохраненная копия данных на определенный момент времени.
+Миграция данных,Процесс переноса данных из одной системы в другую.
+Системный каталог,Хранилище метаданных о структуре и объектах базы данных.
+Обслуживание базы данных,"Процедуры, включающие очистку, индексацию и оптимизацию работы БД."
+Секционирование по диапазону,"Разделение данных на основе значений диапазонов (например, по дате)."
+Идентификатор (ID),"Уникальное значение, назначаемое каждой записи в таблице."
+Разрешения доступа,"Набор правил, определяющих, кто и что может делать в базе данных."
+CTE (Common Table Expression),"Временная именованная таблица, определяемая в SQL-запросе."
+Оконные функции (Window Function),"Функции, вычисляющие значения по окну строк (ROW_NUMBER, RANK, LEAD, LAG)."
+Материализованное представление,"Представление, хранящее результаты запроса для ускорения работы БД."
+EXPLAIN,"Команда SQL, показывающая план выполнения запроса для оптимизации производительности."
+ANALYZE,"Команда PostgreSQL, обновляющая статистику о данных для оптимизации запросов."
+VACUUM,Команда PostgreSQL для очистки и реорганизации базы данных.
+REINDEX,"Команда для пересоздания индексов в PostgreSQL, улучшая производительность."
+TOAST,Механизм PostgreSQL для хранения больших данных вне основной таблицы.
+Расширение (Extension),"Дополнительный модуль, расширяющий функциональность PostgreSQL (например, PostGIS)."
+Логирование (Logging),Процесс записи информации о выполнении SQL-команд в журнал БД.
+PIVOT,"Операция SQL, превращающая строки в столбцы для аналитических запросов."
+Нормализация (Normalization),Процесс организации данных для устранения избыточности и повышения целостности.
+Денормализация (Denormalization),Преднамеренное объединение данных для ускорения выполнения запросов.
+Шардирование (Sharding),Разделение данных на независимые части для распределенной обработки.
+Репликация (Replication),Создание копий данных на нескольких серверах для повышения отказоустойчивости.
+Бэкап (Backup),Создание резервной копии базы данных для защиты от потери данных.
+Восстановление (Restore),Процесс возврата данных из резервной копии после сбоя.
+Пользователь (User),"Идентификатор, имеющий права доступа к базе данных."
+Роль (Role),"Группа прав доступа, назначаемая пользователям."
+Привилегия (Privilege),"Конкретное право, предоставляемое пользователю или роли для выполнения операций в БД."
+База данных (БД),"Организованный набор данных, хранящийся в структурированной форме."
+Система управления базами данных (СУБД),ПО для управления базой данных.
+Таблица,Основная структура хранения данных в реляционной базе данных.
+Запись (Строка),Единичная запись в таблице базы данных.
+Поле (Столбец),Отдельный элемент данных в таблице.
+"Первичный ключ (Primary Key, PK)",Уникальный идентификатор записи в таблице.
+"Внешний ключ (Foreign Key, FK)","Поле, указывающее на первичный ключ другой таблицы."
+Индекс,"Структура, ускоряющая поиск данных в таблице."
+Нормализация,Процесс организации данных для уменьшения избыточности.
+Денормализация,Процесс объединения данных для ускорения запросов.
+Схема базы данных,Логическая структура базы данных.
+SQL (Structured Query Language),Язык запросов для работы с реляционными базами данных.
+Запрос,Инструкция для получения или изменения данных в базе.
+SELECT,Оператор SQL для выборки данных.
+INSERT,Оператор SQL для добавления данных.
+UPDATE,Оператор SQL для обновления данных.
+DELETE,Оператор SQL для удаления данных.
+JOIN,Операция объединения данных из нескольких таблиц.
+INNER JOIN,"Соединение, возвращающее только совпадающие записи."
+LEFT JOIN,"Соединение, включающее все записи из левой таблицы и соответствующие из правой."
+RIGHT JOIN,"Соединение, включающее все записи из правой таблицы и соответствующие из левой."
+FULL JOIN,"Соединение, включающее все записи из обеих таблиц."
+Транзакция,"Группа операций, выполняемых как единое целое."
+ACID,"Свойства транзакций: атомарность, согласованность, изоляция, долговечность."
+COMMIT,Фиксация изменений в базе данных.
+ROLLBACK,Отмена изменений в базе данных.
+CASCADE DELETE,Удаление связанных данных при удалении записи.
+Представление (VIEW),"Виртуальная таблица, основанная на запросе."
+Хранимая процедура (Stored Procedure),"Сохраненный SQL-код, выполняемый в базе данных."
+Триггер,Автоматическое выполнение кода при изменении данных в таблице.
+Ограничение (Constraint),"Ограничение, обеспечивающее целостность данных."
+UNIQUE,"Ограничение, запрещающее повторяющиеся значения."
+CHECK,Ограничение для проверки условий в таблице.
+DEFAULT,Значение по умолчанию для поля.
+AUTO_INCREMENT,Автоматическое увеличение значения поля.
+Репликация,Копирование данных между серверами базы данных.
+Шардинг,Разделение базы данных на части для увеличения производительности.
+Кэширование,Временное хранение данных для ускорения доступа.
+Иерархическая модель данных,Организация данных в виде дерева.
+Сетевая модель данных,Модель данных с произвольными связями.
+Реляционная модель данных,"Модель, основанная на таблицах и отношениях."
+NoSQL,"Системы баз данных, не использующие реляционную модель."
+MongoDB,"Популярная NoSQL база данных, использующая документы."
+Redis,"База данных, хранящая данные в оперативной памяти."
+Big Data,Обработка и хранение больших объемов данных.
+OLAP (Online Analytical Processing),Технология для многомерного анализа данных.
+"ETL (Extract, Transform, Load)","Процесс извлечения, трансформации и загрузки данных."
+Бэкап (Backup),Резервное копирование базы данных.
+Восстановление (Restore),Процесс восстановления данных из резервной копии.
+Лог транзакций,"Журнал, фиксирующий все изменения в базе данных."
+SHOW DATABASES,"SQL-команда, которая отвечает за просмотр доступных баз данных."
+CREATE DATABASE,Команда для создания новой базы данных.
+USE,"С помощью этой SQL-команды USE <database_name> выбирается база данных, необходимая для дальнейшей работы с ней."
+SOURCE,"А SOURCE <file.sql> позволит выполнить сразу несколько SQL-команд, содержащихся в файле с расширением .sql."
+DROP DATABASE,Стандартная SQL-команда для удаления целой базы данных.
+SHOW TABLES,"С помощью этой несложной команды можно увидеть все таблицы, которые доступны в базе данных."
+CREATE TABLE,SQL-команда для создания новой таблицы:
+DESCRIBE,"С помощью DESCRIBE <table_name> можно просмотреть различные сведения (тип значений, является ключом или нет) о столбцах таблицы."
+INSERT,Команда INSERT INTO <table_name> в SQL отвечает за добавление данных в таблицу:
+UPDATE,SQL-команда для обновления данных таблицы:
+DELETE,SQL-команда DELETE FROM <table_name> используется для удаления данных из таблицы.
+DROP TABLE,А так можно удалить всю таблицу целиком.
+SELECT,"Далее мы рассмотрим основные команды SQL, которые позволяют работать непосредственно с данными. К одной из таких SQL-команд относится SELECT для получения данных из выбранной таблицы:"
+SELECT DISTINCT,В столбцах таблицы могут содержаться повторяющиеся данные. Используйте SELECT DISTINCT для получения только неповторяющихся данных.
+WHERE,Можно использовать ключевое слово WHERE в SELECT для указания условий в запросе:
+GROUP BY,"Оператор GROUP BY часто используется с агрегатными функциями, такими как COUNT, MAX, MIN, SUM и AVG, для группировки выходных значений."
+HAVING,"Ключевое слово HAVING было добавлено в SQL по той причине, что WHERE не может использоваться для работы с агрегатными функциями."
+ORDER BY,"ORDER BY используется для сортировки результатов запроса по убыванию или возрастанию. ORDER BY отсортирует по возрастанию, если не будет указан способ сортировки ASC или DESC."
+BETWEEN,"BETWEEN используется для выбора значений данных из определённого промежутка. Могут быть использованы числовые и текстовые значения, а также даты."
+LIKE,"Оператор LIKE используется в WHERE, чтобы задать шаблон поиска похожего значения. Есть два свободных оператора, которые используются в LIKE:
+
+% (ни одного, один или несколько символов);
+_ (один символ)."
+IN,С помощью IN можно указать несколько значений для оператора WHERE:
+JOIN,JOIN используется для связи двух или более таблиц с помощью общих атрибутов внутри них. На изображении ниже показаны различные способы объединения в SQL. Обратите внимание на разницу между левым внешним объединением и правым внешним объединением:
+VIEW,"VIEW — это виртуальная таблица SQL, созданная в результате выполнения выражения. Она содержит строки и столбцы и очень похожа на обычную SQL-таблицу. VIEW всегда показывает самую свежую информацию из базы данных."
+Агрегатные функции,"Это не совсем основные команды SQL, однако знать их тоже желательно. Агрегатные функции используются для получения совокупного результата, относящегося к рассматриваемым данным:"
+COUNT(col_name),возвращает количество строк;
+SUM(col_name),возвращает сумму значений в данном столбце;
+AVG(col_name),возвращает среднее значение данного столбца;
+MIN(col_name),возвращает наименьшее значение данного столбца;
+MAX(col_name),возвращает наибольшее значение данного столбца.
+Вложенные подзапросы,"Вложенные подзапросы — это SQL-запросы, которые включают выражения SELECT, FROM и WHERE, вложенные в другой запрос."
+IS NULL,"Нужен для выбора строк, в которых отсутствует значение столбца (является NULL)."
+LIMIT,"Определяет количество строк, которые нужно вернуть. Если оно равно нулю, запрос возвращает пустой набор результатов."
+OFFSET,"Указывает, сколько строк нужно пропустить перед возвратом результата. Если не определять OFFSET, запрос возвращает данные, начиная с первой строки, указанной в SELECT."
+CREATE INDEX,Присвоение индекса одному или нескольким столбцам ускоряет поиск данных. 
+ON,"Оператор ON указывает на то, что индекс будет создан на столбце last_name таблицы last_name."
+CREATE VIEW,"создание представления.Представление (view) — это виртуальная таблица, основанная на результате запроса. Представления не хранят данные самостоятельно, они определяются SQL-запросами, которые извлекают данные из одной или нескольких таблиц."
+CREATE SCHEMA ,"создание схемы.Схема — это контейнер для хранения объектов БД, таких как таблицы, представления и индексы, которые могут быть организованы и управляться вместе."
+CREATE TRIGGER,"создание триггера.Триггер — это набор инструкций SQL, который автоматически выполняется при наступлении определенного события в БД, такого как вставка, обновление или удаление записи из таблицы SQL."
+BEFORE (или AFTER),указание времени срабатывания триггера (до или после выполнения операции);
+ON table_name,"указание таблицы, к которой привязан триггер;"
+FOR EACH ROW,"условие, будет ли триггер выполняться для каждой строки (FOR EACH ROW) или для каждого оператора (FOR EACH STATEMENT). Эта часть синтаксиса может отсутствовать в некоторых СУБД."
+CREATE PROCEDURE,"Процедура представляет собой набор инструкций SQL, которые выполняют определенную задачу или набор задач в БД. Она может принимать параметры, обрабатывать данные и возвращать результаты."
+DROP,Используется для удаления объектов.
+"BEGIN, END","Оператор BEGIN обозначает начало транзакции (совокупности операций), а END — ее завершение."
+TRUNCATE ,"Нужен для удаления всех записей из таблицы, при этом сохранив структуру таблицы."
+RENAME ,Оператор для переименования объектов БД.
+TO,Оператор TO указывает на новое значение (новое имя или местоположение).
+COMMENT,Используется для добавления комментариев к объектам БД.
+GRANT,Предоставляет пользователю или роли определенные привилегии на объект БД.
+Атрибут,элемент данных в кортеже.
+База Данных (БД),"структурированный организованный набор данных, описывающих характеристики каких-либо физических или виртуальных систем."
+Внешний ключ (foreign key),"поле таблицы, предназначенное для хранения значения первичного ключа другой таблицы с целью организации связи между этими таблицами."
+Домен,набор допустимых значений одного или нескольких атрибутов.
+Индекс,"объект базы данных, создаваемый с целью повышения производительности выполнения запросов."
+Концептуальное проектирование ,"сбор, анализ и редактирование требований к данным."
+Логическое проектирование,преобразование требований к данным в структуры данных
+Модель данных,"интегрированный набор понятий для описания данных, связей между ними и ограничений, накладываемых на данные в некоторой организации."
+Нормальная форма,"требование, предъявляемое к отношениям в теории реляционных баз данных для устранения из базы избыточности, которая потенциально может привести к логически ошибочным результатам выборки или изменения данных."
+Отношение,"N-арным отношением R, или отношением R степени n, называют подмножество декартового произведения множеств D_1, D_2, ..., D_n (n\ge 1), не обязательно различных. Исходные множества D1,D2,...,Dn называют в модели доменами (в СУБД используется понятие тип данных)."
+Первичный ключ (primary key),"минимальное множество атрибутов, являющееся подмножеством заголовка данного отношения, составное значение которых уникально определяет кортеж отношения."
+Поле,некая характеристика моделируемого объекта.
+Представления,"виртуальная (логическая) таблица, результат запроса из базы данных."
+Реляционная алгебра,формальная система манипулирования отношениями в реляционной модели данных.
+Реляционная модель данных,"логическая модель данных, строгая математическая теория, описывающая структурный аспект, аспект целостности и аспект обработки данных в реляционных базах данных."
+Система управления базами данных (СУБД),"программное обеспечение, управляющее доступом к БД."
+Системный каталог (словарь данных),"совокупное описание данных, называемых метаданными (совокупность метаданных (данные о данных))."
+СУБД,"программное обеспечение, с помощью которого пользователи могут определять, создавать и поддерживать базу данных, а также осуществлять к ней контролируемый доступ."
+Таблица,"структура данных, хранящая набор однотипных записей."
+Транзакция,"в информатике, группа последовательных операций, которая представляет собой логическую единицу работы с данными."
+Физическое проектирование,"определение особенностей хранения данных, методов доступа и т.д."
+Целостность базы данных,"соответствие имеющейся в базе данных информации её внутренней логике, структуре и всем явно заданным правилам."
+ER-модель,"модель предметной области, отражающая объекты и связи между ними (синонимы: модель «сущность-связь», модель «объект-свойство-связь», концептуальная модель)"
+SQL-сервер,"собирательный термин, относящийся ко всем серверам баз данных, основанных на SQL"
+Администратор банка данных (АБД),"группа специалистов, обеспечивающих создание, функционирование и развитие БнД"
+База данных,"поименованная совокупность взаимосвязанных данных, находящихся под управлением СУБД"
+База данных иерархическая,"структурированная БД, реализующая иерархическую модель данных"
+База данных распределенная (DDB - Distributed DataBase),"совокупность множества взаимосвязанных баз данных, распределенных в компьютерной сети"
+База данных реляционная,"структурированная БД, реализующая реляционную модель данных"
+База данных сетевая,"структурированная БД, реализующая сетевую модель данных"
+База данных структурированная,"БД, требующая предварительного проектирования и описания структуры БД"
+Банк данных,"система специальным образом организованных данных (баз данных), программных, технических, языковых, организационно-методических средств, предназначенных для обеспечения централизованного накопления и коллективного многоцелевого использования данных"
+Ключ,"атрибут или совокупность атрибутов, однозначно идентифицирующих кортеж"
+Область предметная,"часть реального мира, представляющая интерес для данного исследования"
+Ограничения целостности ,"набор специальных предложений, обеспечивающих целостность данных; утверждения о допустимых значениях отдельных информационных единиц и связях между ними"
+Организационно-методические средства банка данных,"инструкции, методические и регламентирующие материалы, предназначенные для пользователей разных категорий, взаимодействующих с банком данных"
+Запрос,"это некоторая команда, написанная в специальном формате (на языке SQL, если быть точней), которая обрабатывается системой, и на выходе мы получаем результат."
+Кортеж,множество пар Атрибут – Значение атрибута. При этом в кортеж должно входить по одному атрибуту данной сущности.
+Сущность,некоторое комплексное описание одного объекта.
+Составной ключ,"ключ, который использует несколько атрибутов."
+Суррогатный ключ,"ключ, значение которого генерируется СУБД."
+Атомарность,"неделимость атрибутов. Например, ФИО не является атомарным столбцом."
+Транзитивная зависимость,"логическая или смысловая зависимость одного атрибута от другого при условии, что ни один из атрибутов не является первичным ключом. Классический пример: город и индекс."
+Функциональная зависимость,"зависимость значений одного столбца от другого, но никак не наоборот."
+Избыточность,"лишняя информация в базе данных, которая не несет никакой пользы для нас, а лишь увеличивает объем базы данных."
+Аномалия,"проблемы, которые возникают при манипуляции с данными (обновление данных, удаление данных, модификация или изменение данных), из-за избыточности."
+Нормализация,"процесс преобразования отношений базы данных к виду, отвечающему нормальным формам. Нормализация предназначена для приведения структуры БД к виду, обеспечивающему минимальную логическую избыточность, и не имеет целью уменьшение или увеличение производительности работы или же уменьшение или увеличение физического объёма базы данных."
+Денормализация,процесс обратный нормализации. Часто применяется для ускорения процесса чтения данных из базы данных.
+Бизнес-правила,"формальные правила, которые учитываются при проектировании базы данных. Другими словами: это процесс или набор процессов, которые нам необходимо описать и автоматизировать при помощи базы данных."
+Предметная область,"часть реального мира, которая описывается или автоматизируется при создании базы данных. Например: склад, магазин, библиотека, автозаправка."
+"Field (Attribute, Table Column)",an individual characteristic (property) of an entity.
+Domain,a set of possible values for one or more attributes.
+Table,"a collection of records with a fixed number of fields, containing data about all instances of an entity."
+Key,a field or a combination of fields that uniquely identifies a record in a table.
+Primary Key ,a field that uniquely identifies a record in a table and is used to establish relationships with other tables. The values must be unique within the table.
+Secondary Key (Candidate Key) ,a field containing a unique key value that could serve as a primary key but is not chosen as one.
+Foreign Key ,"a field in a child table that contains the value of a primary key from the parent table, establishing a relationship between the two tables"
+Parent Table (Entity) ,"a table that contains the primary key used in a relationship, with its value recorded as a foreign key in a child table."
+Child Table (Entity) ,a table that includes a foreign key containing the primary key value of a parent table.
+One-to-One (1:1) Relationship,a relationship where one record in the parent table corresponds to exactly one record in the child table.
+One-to-Many (1:M) Relationship,a relationship where one record in the parent table corresponds to multiple records in the child table.
+Many-to-Many (M:M) Relationship,a relationship where multiple records in one table correspond to multiple records in another table. This usually requires an intermediary entity to break it into two one-to-many relationships.
+Index,a database object that stores records containing key values and the addresses of corresponding records in an indexed table.
+Dictionary,"a centralized storage of metadata about database objects, including tables, relationships, field formats, constraints, and stored procedures."
+Query ,"an expression that retrieves, modifies, or deletes data from one or more tables in a database using SQL."
+Database Consistency (Integrity) ,"the state of a database where all stored information conforms to its internal logic, structure, and explicitly defined rules. Constraints enforce consistency."
+Transaction,a process that transitions a database from one consistent state to another. A transaction consists of multiple sequential operations that must be executed entirely or not at all to maintain database integrity.
+Locking Records,"a mechanism that prevents concurrent access to data being modified by a transaction until the transaction is complete, ensuring data safety."
+Trigger,"a special type of stored procedure that is automatically executed in response to modifications such as insertions, deletions, or updates in a table, ensuring data consistency and enforcing business logic."
+Normalization ,the process of decomposing a table into multiple tables to minimize redundancy and improve data integrity. The goal is to store each attribute in only one place.
+Post-relational Model,"an extension of the relational model that allows attributes to store multiple values, making fields act as tables."
+Multidimensional Model ,a specialized model used to store data as a multidimensional array (hypercube) for OLAP processing.
+Relational Database,"a database consisting of interrelated two-dimensional tables, following the relational model introduced by Edgar Codd in 1970."
+Distributed Database,"a logically integrated collection of databases distributed across a network, ensuring transparent access to data regardless of location and format."
+Replication,"a mechanism that synchronizes multiple copies of a database, ensuring data consistency by propagating changes across them."
+Confidential Information,information requiring protection against unauthorized access or disclosure.
+Access Control ,"the regulation of access to information, including reading, modifying, copying, and deleting data."
+Authentication ,the process of verifying a user's identity to confirm they are authorized to access the system.
+Discretionary Access Control (DAC),an access control model where access rights to objects are assigned to specific users and can be delegated.
+Database Administrator (DBA),"a person or group responsible for designing, managing, and optimizing a database."
+DBMS Administrator,"a person or group responsible for deploying, maintaining, and ensuring the efficient operation of a DBMS."
+Data Warehouse ,a large-scale database optimized for analytical queries and storing historical data for business intelligence.
+"ETL (Extract, Transform, Load)","a process used to extract data from different sources, transform it into a suitable format, and load it into a data warehouse."
+Stored Procedure ,a set of SQL statements stored in the database that can be executed as a single unit to perform complex operations.
+View,a virtual table based on a SQL query that presents data from one or more tables without storing it separately.
+Rollback,the process of reverting a database to its previous state before a transaction was committed.
+Commit,"the finalization of a transaction, making all its changes permanent in the database."
+Decomposition,"The process of breaking down a complex database system into smaller, more manageable components, often for simplifying design, improving performance, or achieving better maintainability."
+Data Aggregability,"The ability to summarize or group data at various levels of abstraction, often to provide a higher-level view or insights, such as by time, geography, or other criteria."
+Slice,"A subset of a multidimensional data cube, where data is extracted by fixing one or more dimensions, providing a cross-section of the entire dataset."
+Rotation,"The process of reorganizing the axes of a multidimensional data cube to change the orientation of the data, allowing different perspectives for analysis or reporting."
+1NF,"1NF, or first normal form, describes a type of database normalization where each table column only has a single value. A column that has a nested table as a value or multiple values is not in 1NF."
+2NF,"2NF, or second normal form, describes a type of database normalization that: 1) satisfies the requirements of 1NF, 2) has no values that are tied directly to a subset of a candidate key. In other words, a relation is in 2NF if it is in 1NF and all of the non-candidate values are dependent on the composite key in whole, not just a portion of the candidate key. For example, a `book` table that has a candidate key composed of `title` and `author` cannot be in 2NF if it also includes a `dob` field describing the author's date of birth. That column value is dependent only on the value of `author` and could lead to inconsistencies if the values get out of sync."
+3NF,"3NF, or third normal form, describes a type of database normalization that: 1) satisfies the requirements of 2NF, 2) each non-key attribute is not transitively dependent on a key attribute. For example, if a `user` table has a `user_id` column as a primary key, a `user_city` column, and a `user_state` column, it would not be in 3NF because `user_state` is transitively dependent on `user_id` through `user_city` (the city and state should be extracted to their own table and referenced together)."
+4NF,"4NF, or fourth normal form, describes a type of database normalization that: 1) satisfies the requirements of BCNF, 2) for every non-trivial multivalued dependency, the determining attribute in the dependency is either a candidate key or a superset of it. In other words, if a field has multiple dependent fields that are independent from one another, it can lead to redundancies that violate 4NF rules."
+ACID,"ACID — an acronym created from the words atomicity, consistency, isolation, and durability — describes a set of characteristics that database transactions are meant to provide. Atomicity guarantees that all operations in a transaction will complete successfully or will be rolled back. Consistency, often considered a property maintained by the application rather than the database, is often achieved through transactions to make sure that all related values are updated at once. Transaction isolation aims to allow simultaneous transactions to execute independently. Durability means that transactions are meant to be stored on non-volatile storage when committed."
+Access control list (ACL),"An access control list, often shorted to ACL, is a security policy list that dictates which actions each user or process can perform on which resources. There are many different types of ACLs, but they each describe the permissions and access patterns that are allowed by a system."
+Active record ORM,An active record ORM is an object-relational mapper that functions by trying to represent each table in a database as a class in the application. Each record in the table is represented as an instance of the class. Database entries are added and managed by interacting with these representations in the application.
+Anti-caching,"Anti-caching is a strategy that can be used when data is not found in the faster in-memory cache and must be retrieved from slower, persistent storage. The technique involves aborting the transaction and kicking off an asynchronous operation to fetch the data from the slower medium to memory. The transaction can be retried later and the information will be ready to served from memory."
+Atomicity,"Atomicity is a quality mainly associated with database transactions that means that the operations encapsulated in the transaction are handled in an all-or-nothing fashion. This prevents partial updates from occurring where some operations were performed before an error condition arose, leading to inconsistent data. In the case of transactions, either all of the operations are committed or every operation is rolled back to leave the database in the same state that it was in when the transaction began."
+Attributes,"Attributes are characteristics that describe a certain entity in a database. In the ER (entity-relationship) model, attributes are any additional properties that are not relationships that add information about an entity."
+Authentication,"Authentication is an action that validates an identity. In computing and databases, authentication is mainly used as a way to prove that the person or process requesting access has the credentials to validate that they can operate with a specific identity. In practical terms, this might include providing an identity (like a username) and associated authentication material (such as a password, a certificate or key file, or a secret generated by a hardware device belonging to the person associated with the identity). Authentication is used in conjunction with authorization to determine if a user has permission to perform actions on a system."
+Authorization,Authorization is an action that determines if a certain user or process should be allowed to perform a certain action. Authorization involves checking the requested action against a set of guidelines that describe who should be allowed perform what actions. Authorization usually relies on a trusted authentication process to take place before the request in order to confirm the subject's identity.
+Availability,"Availability is a property that describes the degree to which a system is running and capable of performing work. In terms of computing systems like databases, for a single machine, availability is synonymous with the uptime of the application on that computer. For distributed systems, availability is subject to rules that dictate in what capacity the system is allowed to continue functioning if a subset of the system is unavailable."
+BASE,"BASE — an acronym created from the words Basically Available, Soft-state, and Eventually consistent — describes a set of characteristics of some NoSQL databases. It is offered as an description for certain databases that do not conform to the properties described by ACID-compliance (atomicity, consistency, isolation, and durability). BASE databases choose to remain available at the expense of strict data consistency in cases of network partitions. The soft-state component refers to the fact that the state of the system can be in flux as the different members negotiate the most correct values in the system. Eventually consistent is another related statement indicating that the system will eventually achieve consistency given enough time and assuming new inconsistencies aren't introduced during that time."
+BCNF,"BCNF, or Boyce-Codd normal form, describes a type of database normalization that: 1) satisfies the requirements of 3NF, 2) where the determining attribute in each dependency (the attribute that dictates another attribute's value) is either a _superset_ of the dependent attribute, is a candidate key, or is a superset of a candidate key."
+Blue-green deployments,"Blue-green deployments are a technique for deploying software updates with little to no downtime by managing active traffic between two identical sets of infrastructure. New releases can be deployed to the inactive infrastructure group and tested independently. To release the new version, a traffic routing mechanism is switched to direct traffic from the current infrastructure to the infrastructure with the new version. The previously-active infrastructure now functions as the target for the next updates. This strategy is helpful in that the routing mechanism can easily switch back and forth to roll backwards or forwards depending on the success of a deployment."
+Bottleneck,"In computing, a bottleneck occurs when the performance or capacity of a system is limited by contention around a single component. In databases, this can be related to the hardware that the database runs on or the network environment that is available. Application usage patterns can also affect which resource is most under contention. To solve bottlenecks, you must first identify the resource limiting your system's performance and then either add additional capacity or take measures to reduce the rate of usage."
+CAP theorem,"CAP theorem is a statement about distributed databases that states that any system can only provide at most two out of the following three qualities: consistency, availability, and partition tolerance. Generally, it is agreed that partition tolerance must be a feature of any distributed system (as the only way to avoid all network partitions is to have a non-distributed system). Therefore, each distributed system must make a decision as to whether they want to prioritize data consistency (by not accepting new changes in the case of a partition) or system availability (by sacrificing some consistency for the sake of still being able to introduce new changes during the partition)."
+CRUD,"CRUD — an acronym standing for Create, Read, Update, and Delete — describes the basic operations that one uses to operate on stored data. In SQL, the components of CRUD broadly correspond to the operations `INSERT`, `SELECT`, `UPDATE`, and `DELETE`, but many other operations facilitate more granular actions. More generally, CRUD is also often discussed in the context of user interfaces and APIs as a description of the types of actions that a system may permit."
+Cache,"A cache is a component of a system designed to allow faster retrieval for high value or frequently requested pieces of data. In general, caches function by storing a useful fraction of data on media that is either higher performance or closer to the client than the general use persistent media focused on long term, non-volatile storage. In general, caches tend to be higher performance but tend to have more limited capacity and be more expensive."
+Cache-aside,"Cache-aside is a caching architecture that positions the cache outside of the regular path between application and database. In this arrangement, the application will fetch data from the cache if it is available there. If the data is not in the cache, the application will issue a separate query to the original data source to fetch the data and then write that data to the cache for subsequent queries. The minimal crossover between the cache and backing data source allows this architecture to be resilient against unavailable caches. Cache-aside is well-suited for read-heavy workloads."
+Cache invalidation,"Cache invalidation is the process of targeting and removing specific items from a cache. Most often, this is performed as part of a routine when updating records so that the data in the cache does not serve stale data to clients."
+Canary releases,A canary release describes a release strategy where new versions of software are deployed to a small subset of servers to test new changes in an environment with limited impact. The deployment and resulting behavior of the test group are observed and the team can then decide if they want to roll back the changes or continue to deploy the changes to a wider range of hosts. Canary releases are a way of testing in production while limiting the number of clients impacted by any problems.
+Candidate key,"A candidate key in a relational database is the term for a minimal superkey. In other words, a candidate key is any column or combination of columns that can be used to uniquely identify each record in a relation without including columns that do not help in specificity. In a `cars` table, a unique `car_id` column would be a candidate key as well as a combination of the `make`, `model`, and `year` columns (assuming that's specific enough to eliminate any duplicates). However, `car_id` and `make` would not be a candidate key since in this instance, `make` does nothing to narrow down the uniqueness of each row."
+Cascade,"In relational databases, cascade is an option for how to handle deletes or updates for records that have related entries in other tables. Cascade means that the operation (delete or update) should be applied to the child, dependent rows as well. This helps you avoid orphaned rows in the case of deletes and out of sync values in the case of updates."
+Cassandra,"Apache Cassandra is a distributed, wide-column NoSQL database focused on operating on and managing large volumes of data. Cassandra scales incredibly well and each node in the cluster can accept reads or writes. Data is stored in rows that are uniquely identifiable and partitioned based on partition key. Each partition key returns a row of data with both column names and values defined internally, meaning each row in the same column family may contain different columns."
+Check constraint,"A check constraint is perhaps the most flexible table or column constraint that can be added to a relational database. It is defined as a boolean condition that must be met for the proposed data to be accepted by the system. Because of the nature of the condition is fairly open-ended, check constraints can be used to model many different types of requirements to ensure that the data coming into the system conforms to expectations."
+Cluster,"In computing, a cluster is a group of computers all dedicated to helping with a shared task. Database clusters are used to increase the capacity, availability, and performance of certain types of actions compared to database deployed on a single computer. There are many different topologies, technologies, and trade-offs that different clustered systems employ to achieve different levels of performance or fault tolerance. Because of the diversity of different implementations, it can be difficult to generalize specific characteristics that apply to all clustered database systems."
+Collation,"Collation in databases refers to the ordering and comparison characteristics of different character systems. Most databases allow you to assign collation settings, which impact how text in the system are sorted, displayed, and compared against one another. Collation is often defined using a set of labels that describe the character set, language context, and different options about sensitivity or insensitivity to capitalization, accents, and other character modifiers."
+Collections,"In document databases, collections are containers that are used to store groups of documents together. The collections may have semantic meaning assigned by the application and database designers, but otherwise are simply a way to partition different sets of documents from one another in the system. Different collections can be assigned different properties and actions can be performed targeting specific collections of documents."
+Column,"Columns are a component of table-oriented databases that label and potentially define the type of each value stored in that column. In traditional relational databases, the properties of a series of columns are one of the primary ways of defining the properties of the table in general. Each row added to the table must provide values that conform to the requirements associated with the table's columns. In non-relational databases, columns can have many different properties. Generally, however, they are used to label and define the characteristics for values that records choose to store in that column."
+Column database,"A column database or column-oriented database is a table-oriented database similar to a traditional relational database that stores data in the background by column instead of by record. This means that the data associated with a single column are stored together rather than grouping all of the data associated with a single record. This can provide different performance characteristics depending on usage patterns, but generally doesn't affect how the user interacts with the data in the table on a daily basis. Although often confused in the literature, column databases are not to be confused with wide column databases or column family databases."
+Column family,"A column family is a database object that stores groups of key-value pairs where each key is a row identifier and each value is a group of column names and values. All together, a column family constructs something that is akin to a table in relational databases. However, each row can define its own columns, meaning that rows are of varying lengths and do not have to match each other in the columns represented or the data types stored."
+Command query responsibility segregation,"Command query responsibility segregation is a application design pattern that allows you to separate operations based on their impact on the underlying database. In general, this usually means providing different mechanisms for queries that read data versus queries that change data. Separating these two contexts allows you to make infrastructure and system changes to scale each use-case independently, increasing performance."
+Commit,"In the context of databases, committing data is the process whereby you execute and durably store a set of proposed actions. Many databases are configured to automatically commit each statement as it is received by the system, but transactions, for example, are one mechanism through which you can control the commit behavior of the database by grouping multiple statements together and committing them as a group. Committing in database is the action that is actually responsible for performing a permanent action on the system."
+Composite key,"In relational databases, a composite key is a key composed of two or more columns that can be used to uniquely identify any record in a table. For example, if we have a `shirts` table that only stores a single record for each combination of size and color could have a composite key defined by a combination of the `color` and `size` columns."
+Concurrency,"Concurrency is the ability of a system to work on multiple tasks at once without affecting the overall result. Concurrency allows systems to execute operations in parallel, increasing the relative performance of the group of tasks."
+Connection pooling,"Connection pooling is a strategy used to improve performance and avoid connection exhaustion by managing the connections between an application and database. It does this by maintaining a pool of connections to the database. By keeping the connections open and reusing them for multiple queries, the application can forgo the overhead of having to establish a connection each time and the database's connection limits can be managed by pooling component."
+Consistency,Consistency is a property of data systems that means that the individual data entities do not conflict and continue to model the information they intend to even as changes are introduced. Each piece of data and change must be validated to ensure that it conforms to the rules imposed on the data structures and care must be taken to balance out any changes that should impact other data (like debiting and crediting different accounts at the same time).
+Constraint,A constraint is a limitation imposed on a specific column or table that impacts the range of values accepted by the system. Constraints are used to define rules that the database system can enforce to ensure that values conform to requirements.
+Cursor,"A database cursor is a way for clients to iterate over records and query results in a controlled, precise manner. Cursors are primarily used to page through results that match a query one-by-one by iteratively returning the next row for processing. This can help you operate on an unknown number of records by accessing the results as a queue. Care must be taken when using cursors as they take up resources on the database system, can result in locking, and often result in many more network round trips than would be required otherwise."
+Dark launching,"Dark launching is a deployment and release strategy that helps organizations test new changes in production contexts without affecting the user experience. Dark launching involves releasing new code in parallel to the original functionality. Requests and actions are then mirrored and run against both the old code and the new code. While the system's behavior from the user's perspective is only affected by the original code, the new code can be tested with real data to validate functionality and catch performance and functional problems. When properly vetted, the application can be altered to use the new code path exclusively."
+Data,"In the broadest sense, data are facts or pieces of information. They are measurements or values that contain information about something. In some contexts, data is defined as distinct from information in that information is analyzed or processed data while data consists only of raw values. Practically speaking, however, these terms are often used as synonyms and typically encapsulate any fact along with the relevant context necessary to interpret or contextualize it. Data is an essential component of almost all communication and activity and it can gain meaning and value as it is collected, analyzed, and contextualized."
+Data definition language (DDL),"A data definition language, or DDL, is a set of commands or actions that are used to define database structures and objects. They are a key component to relational and other databases and are expressed as a subset of the available commands available to manage data in languages like SQL. Data definition language is the portion of the language dedicated to describing, creating, and modifying structures and the frameworks that will hold data."
+Data independence,"Data independence is a term used to describe the separation of database clients or applications from the underlying structure responsible for representing and storing the data. Data independence is achieved if the database is able to abstract the structure in a way that allows user applications to continue running even if additional attributes are added to a relation (logical independence) or if the details of the storage medium changes (physical independence), for instance."
+Data mapper ORM,"A data mapper ORM, or just simply a data mapper, is an application component that acts as a go between to translate between database representations and the data structures present in applications. Data mappers allow your application logic and database data representations to remain independent. The data mapper manages and translates data between these two mediums so that each representation is independent and can be structured intelligently."
+Data type,"A data type is a category or attribute that expresses a constraint on valid values. For example, an integer type specifies that only whole numbers are appropriate and expected for a variable or field. Data types allow you to specify expectations and requirements about your data during when defining a field or container. The programming language or application can then validate that introduced data meets the necessary criteria. Data types are also help determine the available operations that can be performed on a piece of data."
+Database,"A database is a structure used to organize, structure, and store data. Databases are often managed by a database management system which provides an interface to manipulate and interact with the database and the data it manages. Databases can be highly structured or allow more flexible data storage patterns and can store many different types of data in a way that allows for querying, recalling, and combining data at the time of retrieval."
+Database abstraction layer,"A database abstraction layer is a programming interface that attempts to abstract differences between underlying database technologies to provide a unified experience or interface to the application layer. Database abstraction layers are often helpful for developers because they help to normalize the implementation differences between various offerings and can stay stable even as the underlying technology evolves. However, there are some challenges as well, such as leaking abstractions, masking implementation-specific features or optimizations from the user, and creating a dependency that can be difficult to dislodge."
+Database administrator (DBA),"A database administrator, or DBA, is a role responsible for configuring, managing, and optimizing database systems and the related ecosystem of software and hardware. Some responsibilities they may be involved with include architecture planning, configuration, schema and change management, migrations, replication and load balancing, sharding, security considerations, managing backup strategies, and more. Database administrators are typically expected to have expertise in database design and theory and be able to help organizations make decisions about database technology selection and implementation. In many modern organizations, the responsibilities traditionally held by DBAs are now distributed between various members of the development and operations teams or have been offloaded to external providers to simplify some of the infrastructure management portions of the job."
+Database engine,"A database engine is the piece of a database management system responsible for defining how data is stored and retrieved, as well as the actions supported for interacting with the system and data. Some database management systems support multiple database engines that offer different features and designs, while other systems only support a single database engine that has been designed to align with the goals of the software."
+Database management system (DBMS),"A database management system, often called a DBMS or even just a ""database"", is an application responsible for organizing and managing data. DBMSs can follow many different paradigms and prioritize certain goals. Generally, at the very least, they are responsible for persisting data, organizing and categorizing data, and ingesting, manipulating, and querying data. Most often, DBMSs offer a client / server model where the server is responsible for controlling and managing the data while clients, libraries, or APIs can be used to interact with the server to add or query data, change data structures, or manage other aspects of the system."
+Database model,"A database model is the overall strategy used by a database management system for storing, organizing, and providing access to data. There are many different database models available, but the relational model, which uses highly structured tables to store data in a specific format, is perhaps the most common type. Other types of databases include document databases, wide-column databases, hierarchical databases, key-value stores, and more. Some database systems are designed to be ""multi-model"", meaning they support databases with different types of models running within the same system."
+Database proxy,"A database proxy is a software component responsible for managing connections between database clients and database servers. Database proxies are used for a number of reasons including organizing access to a limited number of connections, allowing transparent scaling of the database layer, and redirecting traffic for deployments and similar scenarios. Database proxies are usually designed to be transparent for applications, meaning that the applications can connect to the proxy as if they were connecting directly to the backend database."
+Dataset,"A dataset, sometimes spelled data set, is a single collection of data. Typically, this represents a chunk of related data applicable to a certain task, application, or area of concern. Typically, datasets are a combination of the data itself as well as the structure and context necessary to interpret it. They often consist of a combination of quantitative and qualitative values that can act as the raw data for further analysis and interpretation."
+Denormalization,"Denormalization is a process where the data and structure within a database is ""denormalized"" or taken out of a normalized state. This can happen accidentally if a data structure that is intended to be normalized is ill defined or mismanaged. However, it is often also performed intentionally in certain scenarios. Denormalization tends to allow faster access to data by storing values redundantly in different places. The drawback of this is that write performance suffers and there is a possibility that data can get out of sync since multiple locations are used to represent the same data."
+Dirty read,"A dirty read is a specific type of anomaly that can occur where one transaction can read data that hasn't been committed by another transaction. If the second transaction is rolled back instead of committed, the first transaction will be using a value that doesn't reflect the actual state of the database. Dirty reads are possible at certain isolation levels for transactions and represent a risk that can lead to inconsistency when manipulating data in parallel."
+Distributed database,"A distributed database is a database system that spans multiple physical systems. Data is spread across a number of machines for the sake of performance or availability. While distributed systems can help scale a database to handle more load, they also represent a significant increase in complexity that can lead to consistency and partition challenges as well as certain negative performance impacts like an increase in data writes in some cases."
+Document,"In the context of document databases, a document is considered a container for information representing a single record or object containing related descriptive data. Documents can have a flexible structure that does not have to match the other documents on the system and can often be nested. Documents are typically represented in a data serialization format like JSON or YAML that can organize the document with labels and metadata."
+Document database,"A document database is a database model that represents items in individual objects called documents. While documents can be grouped together for organization, they don't have to share the same structure and can be designed to uniquely capture the data required to describe the item in question. Document databases typically don't support robust join operations to link different documents together, but are often praised for their flexibility and quick time-to-productivity due to their flexibility and ease in representing programmatic data structures."
+Durability,"Durability is a quality of data that signifies that it has been captured on persistent storage that will survive in the event of a program crash. Typically, this means flushing the data to a non-volatile storage medium like a hard drive that doesn't require electricity to maintain state."
+Encoding,Encoding is a system that translates between a character system that can represents the components used in written language and a digital representation that the computer can store and operate on. Different encoding systems have been developed with a wide variety of character ranges. Some are targeted at specific languages or language families (like ASCII) while others attempt to provide representation for much larger character sets appropriate for different many languages (like the UTF unicode varieties).
+Encrypted transport,"Encrypted transport is any type of communication process that encrypts its messages prior to sending them to the recipient. Transport encryption is necessary to ensure privacy (prevent others from seeing sensitive information) as well as avoid tampering (making manipulation of the data obvious). Many different encrypted transport systems can used when deploying databases, including TLS/SSL encryption, VPNs, and private networks."
+Ephemerality,"Ephemerality is a characteristic that indicates that a piece of data or circumstance is not permanent. In many ways, it is the opposite of durability. In databases, certain items, like data you wish to persist, should not be ephemeral. However, other components, like a secret key used to encrypt a connection between a database and client, can benefit from being ephemeral by preventing key leakage from effecting future or past sessions."
+Ephemeral storage,"Ephemeral storage, also sometimes called volatile or non-durable storage, is any storage medium that persists for a short time, often associated with certain conditions. For instance, in applications, data being stored in memory will only survive while the process is running. Similarly, data stored to a temporary directory is only available until the system reboots. Often, ephemeral storage is useful for temporary data or as a holding area before data can be stored on a more permanent medium."
+Eventual consistency,"Eventual consistency is a description of a consistency / availability strategy implemented by certain distributed computing or database systems. The CAP theorem of distributed systems states that systems must choose whether prioritize availability or data consistency in the face of a network partition. Eventual consistent systems make the choice to favor availability by continuing to serve requests even if the server's peers are not available to confirm operations. Eventually, when the partition is resolved, a consistency routine will run to decide on the most correct state of any inconsistent data, but there will be a time where the data on different servers are not in agreement."
+Eviction,"In the context of caches, eviction is a process where a piece of data is removed from a cache. This can happen because the current value has been invalidated by an operation or it can occur automatically as a result of policies designed to remove the data that is the oldest or least used."
+Expand and contract pattern,"The expand and contract pattern is a strategy for introducing new changes to a database schema without affecting existing applications. It works by introducing changes in carefully controlled stages by first adding new or changed structures alongside existing structures and then expanding the application logic to use both structures simultaneously. Eventually, after testing, the application can stop writing to original structure and it can be removed."
+Extract-transform-load (ETL),"Extract, transform, and load, often abbreviated as ETL, is a process of copying and processing data from a data source to a managed system. First the data is extracted from its current system to make it accessible to the destination system. Next, the data is manipulated and modified to match the requirements and format of the new system. Finally, the reconstructed data is loaded into the new system."
+Feature flags,"A feature flag, or a feature toggle, is a programming strategy that involves gating functionality behind an external switch or control. The switch is typically first set to indicate that the feature should not be active. When the organization is ready, they can activate the switch and the program will start using its new functionality. This allows new features to be deployed without immediately activating them. It decouples the deployment of new software from the release of the software, offering greater control over how a change is introduced and for greater testing in a production environment."
+Field,"A database column, or field, is a container for a specific type of data in a database table. Database fields in relational databases are regular, in the sense that each row in the table will contain the same number of fields with the same characteristics. The values that database fields can contain can be controlled by the data type assigned to the field as well as constraints that further limit the valid values."
+Flat-file database,"A flat-file database is a database or database-like structure stored in a file. These define the structure and the data the database contains in a unified format. Many examples of flat-file databases, like CSV (comma-separated values) files are written in plain text, but binary formats exist too. One difference between flat-file databases and more complex types is that the storage format itself often is responsible for describing the relationships between data instead of the database system."
+Foreign key,"A foreign key is a designated column or group of columns in a relational database that is used to maintain data integrity between two tables. A foreign key in one table refers to a candidate key, typically the primary key, in another table. Since a candidate key is referenced, each row in the database will be unique and the two tables can be linked together row for row. The values are of these designated columns is expected to remain identical across the two tables. The foreign key constraint allows the database system to enforce this requirement by not allowing the values to be out of sync."
+Full-text search,"Full-text search describes a family of techniques and functionality that allow you to search the complete text of documents within a database system. This is in direct opposition to search functionality that relies only on metadata, partial text sources, and other incomplete assessments. Full-text search relies on asynchronous indexing using natural language-aware parsers to analyze and categorize text within documents."
+Graph database,"A graph database is a NoSQL database that uses a graph structure to store and define relationships between pieces of data. Graph databases are constructed using nodes, which represent entities and can contain properties or attributes. Nodes are connected to one another using edges, which are responsible not only for linking nodes, but also defining the nature of the relationship. For example, a node might describe a person with a property of ""teacher"". It might be connected to a class node with an edge called that specifies ""teaches"" but may be connected to another person node with an edge that specifies ""married to""."
+GraphQL,"GraphQL is a language that can be used to query and manipulate data, commonly used for building APIs. Clients are able to specify the exact data required and the server crafts a response following the provided structure. GraphQL's strengths are its ability to return data using custom structures, stitch together data from various back ends, and answer complex queries in a single API call."
+HTAP database,"HTAP databases, or hybrid transactional/analytical databases, are a category of database that seeks to offer the advantages of both fast, reliable transactional processing and the ability to process heavy, complex analytical workloads concurrently on the same machine. Rather than analyzing data after the fact, these database offerings attempt to allow real time analysis that can impact the way decisions are made rapidly."
+Hierarchical database,"A hierarchical database is a database model that organizes itself into a tree-like structure. Each new record is attached to a single parent record. As records are added to the database, a tree-like structure emerges as records fan out more and more from the root record. The links between records can be traversed to get to other records. Examples of systems that use a hierarchical model include LDAP (Lightweight Directory Access Protocol) and DNS (Domain Name System)."
+Horizontal scaling,"Horizontal scaling, also known as scaling out, is a scaling strategy that involves increasing the number of units that can perform a given task. This often means increasing the number of computers in a worker pool that can respond to requests. Scaling out has many advantages including cost, flexibility, and the level of traffic that can be handled, but may add complexity in terms of coordination and complexity, especially when data is involved."
+Hot backup,"A hot backup is a backup of a database system while it is actively in use. They are often preferable, if possible, because they do not require the database system to be taken offline to perform the operation. Hot backups are not always possible as they can require locking certain parts of the database or can reduce the IOPS (Input / Output Operations per Second) available for normal database tasks."
+In-memory database,An in-memory database is a database system where the entire data set can all be loaded into and processed in the computers memory. This processing model offers huge performance benefits as all of the data is already in main memory and there is no delay retrieving data from slower storage. Care must be taken when using in-memory databases to have a strategy for persisting the data or repopulating the in-memory information when the machines are restarted.
+Index,A database index is a structure that is created to allow for faster record finding within a table. An index allows the database system to look up data efficiently by keeping a separate structure for the values of specific columns. Queries that target the indexed columns can identify applicable rows in the table quickly by using a more efficient lookup strategy than checking each row line by line. Indexed columns improve read operations but do add overhead to write operations since both the table and the index must be updated. It is important to balance these two considerations when designing table indexes.
+Ingesting,Ingesting data is the act of importing new data into a data system. This can be a one-off data loading operation or a continuous consumption of data being generated by other system. Data ingestion is a common stage of populating and updating analytic databases and big data stores as they often involve consolidating data from various sources.
+Inner join,"An inner join is a type of relational database operation that joins two tables by only returning rows where the joining column values exist in both tables. With an inner join, there must be a match on the join columns in both tables. There are no rows using `NULL` values to pad out rows missing from one table or the other."
+Interactive transactions,"Interactive transactions are a database transaction feature that allows clients to manually specify transaction operations in an ad-hoc manner. Rather than a transaction being a wrapper around a group of queries that can all be executed sequentially with no pause, interactive transactions allow developers to briefly pause their database operations to execute other logic before continuing with the transaction processing. This gives flexibility in transaction processing but can lead to unwanted transaction running times if not carefully managed."
+Isolation,"In the context of databases, isolation is a property that describes how data and operations are visible within and between transactions. The level of isolation can be set by the database administrator or the query author to define the trade-offs between isolation levels and performance. Isolation is one of the key guarantees described by the ACID acronym."
+Isolation levels,"Isolation levels describe different types of trade-offs between isolation and performance that databases can make when processing transactions. Isolation levels determine what types of data leaking can occur between transactions or what data anomalies can occur. In general, greater levels of isolation provide more guarantees at the expense of slower processing."
+Join,"In relational databases, a join is an operation that connects two tables based on a shared ""join"" column or columns. The values within the join columns must be unique within each table. The join operation matches rows based on the join column values to create an extended virtual row composed of the columns from each table. Different types of joins are available based on what the user wants to do with rows that do not have a matching counterpart in the other table."
+Key,"In the context of databases, a key is any attribute, column, or group of attributes or columns that can be used to uniquely identify individual rows. Some pieces of data can be used as a key because of their natural uniqueness (a natural key) while other data sets may need to generate a key to identify each record (a surrogate key). Each table or data collection can have multiple keys that uniquely identify a row (called candidate keys), but typically, there is a main key (called the primary key) designated as the main way to access rows."
+Key-value database,"A key-value database, or key-value store, is a database model that allows users to store and retrieve data with an arbitrary structure using keys. The key is used to identify and access the record, which can consist of a single value or a structure of more complex data. Each record in a key-value database can define its own structure, so there is not a unified table structure as there is in relational databases. Key-value databases are useful because they are extremely flexible and use a model that feels familiar to many object-oriented developers."
+Left join,"A left join is a join operation for relational databases where all of the rows of the first table specified are returned, regardless of whether a matching row in the second table is found. Join operations construct virtual rows by matching records that have identical values in specified comparison columns from each table. The results for a left join will contain the rows from both tables where the column values matched and will additionally contain all of the unmatched rows from the first, or left, table. For these rows, the columns associated with the second, or right, table will be padded with `NULL` values to indicate that no matching row was found."
+Lexeme,"Lexemes are language-level units of meaning that are relevant in natural language processing and full-text search contexts. Typically, when text is indexed, it is broken down into individual tokens which are then analyzed as lexemes using language-level resources like dictionaries, thesauruses, and other word lists to understand how to process them further."
+Locale,"In databases and computing in general, a locale specifies the region, language, country, and other pieces of contextual data that should be used when performing operations and rendering results. In databases, locale settings can affect things like column orderings, comparisons between values, spelling, currency identifiers, date and time formatting, and more. Defining the correct locale at the database server level or requesting the locale you need during a database session are essential for ensuring that the operations are performed will yield the expected results."
+Lock,"In databases, a lock is a technique used to prevent modification of a database record or table in order to maintain consistency during certain operations. Locks can prevent any access to the locked resource or prevent only certain operations from being performed. They can be issued for a specific record or for an entire table. Because locks prevent concurrent operations from accessing the locked data, it is possible for locked data to impact performance and lead to resource contention."
+MariaDB,"MariaDB is an open-source relational database system developed with the goal of providing a drop-in replacement for MySQL after Oracle's acquisition left some within the community uncertain about the future direction of the project. Since its initial fork, each project has added features that widen the gap between the two database systems."
+Microservice architecture,"The microservices architecture is an application and service design that affects the development, deployment, and operation of the components. The microservices approach decomposes an application's functionality and implements each responsibility as a discrete service. Rather than internal function calls, the service communicates over the network using clearly defined interfaces. Microservices are often used to help speed up development as each component can be coded and iterated on independently. It also helps with scalability as each service can be scaled as needed, often with the help of service orchestration software."
+"Migration (database, schema)","Database or schema migrations are processes used to transform a database structure to a new design. This involves operations to modify the existing schema of a database or table as well as transforming any existing data to fit the new structure. Database migrations are often built upon one another and stored as an ordered list in version control so that the current database structure can be built from any previous version by sequentially applying the migration files. Often, developers must make decisions about how best to modify existing data to fit the new structure which might include columns that did not previously exist or changes to data that are difficult to easily reverse."
+MongoDB,"MongoDB is the most popular document-oriented NoSQL database system in use today. It stores data using JSON-like structures that can be specified at the time of data storage. Each document can have its own structure with as much or as little complexity as required. MongoDB provides a non-SQL methods and commands to manage and query data programmatically or interactively. MongoDB is known for its fast performance, scalability, and for enabling a rapid development pace."
+Monolithic architecture,"Monolithic architecture is a term used to refer to a traditional application. In monoliths, although different pieces may be broken down internally for ease of development, once built, the application is a single item that has many different functions and responsibilities. Monoliths can interface with the external world in any number of ways, but the communication and coordination of different functionality within the program happens internally. Monolithic architecture is sometimes considered to be easier to implement, but does suffer from inflexibility with scaling and availability as the entire application must be scaled up and down as a single unit."

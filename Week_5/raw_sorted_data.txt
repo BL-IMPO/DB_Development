@@ -1,0 +1,147 @@
+| Cold Backup - A cold backup is a consistent copy of all files of the cluster using OS tools like cp or tar. The instance must be stopped during backup creation. Works only at the cluster level. |
+| Hot Continuous Archiving - Consists of a base backup (copy of all cluster files) and subsequent WAL files storing data changes. |
+| Hot Logical Backup (pg_dump) - A logical backup captures data within a database or its parts using pg_dump. Creates a consistent snapshot while the instance runs. |
+| NF - First normal form: Each table column contains atomic values (no nested/multiple values). |
+| NF - Second normal form: Meets 1NF, and non-candidate attributes fully depend on the entire composite key. |
+| NF - Third normal form: Meets 2NF, and no transitive dependency exists between non-key attributes. |
+| NF - Fourth normal form: Meets BCNF, and non-trivial multivalued dependencies are determined by candidate keys. |
+| ABSOLUTE - Specifies an absolute cursor position. |
+| Access Control - Regulates access to data (read, modify, copy, delete). |
+| Access Control List (ACL) - A security policy listing user/process permissions for resources. |
+| ACID - Transaction properties: Atomicity, Consistency, Isolation, Durability. Ensures reliable transaction processing. |
+| Active Record ORM - Maps database tables to application classes; records are class instances. |
+| Adaptive Search - Dynamically adjusts indexing/search parameters based on query complexity. |
+| ALIAS - Defines alternative names for PL/pgSQL function parameters. |
+| ALL - Compares a value to all elements in an array using a specified operator. |
+| ALTER - Modifies existing database objects (tables, indexes). |
+| ANALYZE - Updates PostgreSQL query optimization statistics. |
+| AND - Logical operator for combining conditions. |
+| Angular Distance - Similarity measure based on vector angles. |
+| Anomaly - Data inconsistencies due to normalization violations. |
+| Anti-caching - Fetches data from persistent storage when missing in cache, aborting and retrying transactions. |
+| Approximate Nearest Neighbor (ANN) - Efficiently finds closest vectors using techniques like LSH or graph-based indexing. |
+| Archive Recovery Mode - Instance state during recovery using archived WAL files. |
+| Archiving - Copies WAL files to a failsafe location for Point-in-Time Recovery (PITR). |
+| ARRAY - Collection of elements of the same type, declared with square brackets. |
+| ASSERT - Checks a condition; raises an error if false (debugging tool). |
+| Asynchronous Replication - Master sends data to standby without waiting for confirmation. |
+| Atomicity - Ensures transactions are all-or-nothing (no partial updates). |
+| Attributes - Characteristics describing entities in a database (ER model). |
+| Authentication - Verifies user identity via credentials (e.g., username/password). |
+| Authorization - Determines user/process permissions after authentication. |
+| AUTO_INCREMENT - Automatically increments field values for new rows. |
+| Autovacuum - PostgreSQL feature for automatic database cleanup/optimization. |
+| Availability - System uptime and operational capability, especially in distributed systems. |
+| AVG() - Aggregates average values from a column. |
+| B+ Tree - B-tree variant where data is stored only in leaf nodes. |
+| BACKUP - Process of creating database backups. |
+| BACKWARD - Moves a cursor backward through a result set. |
+| BASE - NoSQL database properties: Basically Available, Soft-state, Eventually consistent. |
+| BCNF - Boyce-Codd Normal Form: Meets 3NF, and every determinant is a candidate key. |
+| BEFORE/AFTER - Specifies trigger execution timing (before/after an operation). |
+| BEGIN - Starts a transaction block in PL/pgSQL. |
+| BETWEEN - Checks if a value lies within a range. |
+| Big Data - Storage/processing of large-scale datasets. |
+| BigInt - Data type for large integers. |
+| Binary Embeddings - Vectors with binary elements (0/1) for compact storage. |
+| BLOB - Stores binary large objects (e.g., multimedia files). |
+| Blue-Green Deployments - Deployment strategy using dual infrastructure sets to minimize downtime. |
+| BOOLEAN - Data type with TRUE/FALSE values. |
+| Bottleneck - System performance limitation due to resource contention. |
+| Brute-Force Search - Exhaustive search comparing every vector; accurate but slow for large datasets. |
+| B-Tree - Balanced tree index structure for efficient data retrieval. |
+| Cache - High-speed data storage layer for frequent access. |
+| Cache Invalidation - Removes stale data from a cache. |
+| Cache-Aside - Application-managed caching: fetches data from DB if not in cache. |
+| Canary Releases - Gradual feature rollout to a subset of users/servers. |
+| Candidate Key - Minimal superkey uniquely identifying table records. |
+| CAP Theorem - Distributed systems trade-off: Consistency, Availability, Partition Tolerance (pick two). |
+| Cascade Delete - Automatically deletes related child records when a parent is deleted. |
+| CASE - Conditional expression similar to IF-ELSE. |
+| Cassandra - Distributed wide-column NoSQL database for large-scale data. |
+| CAST - Converts data types. |
+| CHECK Constraint - Enforces a boolean condition on table data. |
+| Checkpoint - Ensures database files are in a consistent state; flushes data to disk. |
+| CLOB - Stores large text data. |
+| CLOSE - Closes a cursor to release resources. |
+| Cluster - Group of nodes working together for scalability/availability. |
+| COALESCE - Returns the first non-null value from a list. |
+| Collation - Rules for string comparison/sorting (e.g., case sensitivity). |
+| Column Database - Stores data by column for analytical query efficiency. |
+| COMMIT - Finalizes a transaction, making changes permanent. |
+| Composite Key - Key composed of multiple columns to uniquely identify records. |
+| Concurrency - Handling multiple operations simultaneously without conflicts. |
+| Connection Pooling - Reuses database connections to improve performance. |
+| Consistency - Ensures data adheres to defined rules and constraints. |
+| CONSTRAINT - Enforces rules on table data (e.g., UNIQUE, PRIMARY KEY). |
+| CONTINUE - Skips to the next loop iteration. |
+| Cosine Similarity - Measures vector similarity using cosine of the angle between them. |
+| COUNT() - Aggregates the number of rows. |
+| CREATE - Creates database objects (tables, indexes). |
+| CROSS JOIN - Combines all rows from two tables (Cartesian product). |
+| Cursor - Iterates over query results row by row. |
+| Data Abstraction Layer - Hides database complexity from applications. |
+| Data Dictionary - Metadata repository describing database objects. |
+| Data Independence - Separates application logic from database structure/storage. |
+| Data Warehouse - Optimized for analytical queries and historical data. |
+| Database - Structured collection of data managed by a DBMS. |
+| DBMS - Database Management System: software to create/manage databases. |
+| Deadlock - Two transactions blocking each other indefinitely. |
+| Dead Tuple - Unused PostgreSQL row requiring cleanup. |
+| DECLARE - Defines variables/cursors in PL/pgSQL. |
+| DEFAULT - Assigns a default value to a column/parameter. |
+| DELETE - Removes rows from a table. |
+| Denormalization - Introduces redundancy to improve read performance. |
+| Dense Vector - Vector with mostly non-zero elements. |
+| DISTINCT - Removes duplicate rows from query results. |
+| Distributed Database - Data spread across multiple network nodes. |
+| DML - Data Manipulation Language: INSERT, UPDATE, DELETE. |
+| Document Database - Stores flexible JSON-like documents (e.g., MongoDB). |
+| DROP - Deletes database objects. |
+| Durability - Ensures committed transactions survive system failures. |
+| Euclidean Distance - Straight-line distance between vectors. |
+| EXCEPT - Returns rows from the first query not present in the second. |
+| EXECUTE - Runs dynamically constructed SQL. |
+| EXPLAIN - Displays query execution plan for optimization. |
+| FOREIGN KEY - Links tables by referencing another table’s primary key. |
+| FULL OUTER JOIN - Combines all rows from both tables, filling unmatched areas with NULL. |
+| GRANT - Grants user privileges. |
+| GROUP BY - Groups rows by specified columns for aggregation. |
+| HAVING - Filters groups after aggregation. |
+| HNSW - Hierarchical Navigable Small World: Graph-based ANN algorithm. |
+| Index - Data structure speeding up data retrieval. |
+| INNER JOIN - Returns rows with matching values in both tables. |
+| INSERT - Adds new rows to a table. |
+| Isolation Level - Defines transaction visibility (e.g., Read Committed, Serializable). |
+| JSONB - PostgreSQL binary JSON storage with indexing. |
+| LEFT JOIN - Returns all left table rows + matched right table rows. |
+| LOCK - Restricts access to data during transactions. |
+| Materialized View - Stores query results physically for faster access. |
+| MAX() - Aggregates maximum column value. |
+| MIN() - Aggregates minimum column value. |
+| MongoDB - Document-oriented NoSQL database. |
+| Normalization - Reduces data redundancy through structured decomposition. |
+| NoSQL - Non-relational databases optimized for scalability/flexibility. |
+| NULL - Represents missing/unknown values. |
+| OR - Logical operator for alternative conditions. |
+| ORDER BY - Sorts query results. |
+| PARTITIONING - Splits tables into manageable segments. |
+| PRIMARY KEY - Uniquely identifies each row in a table. |
+| Query Optimization - Improves query performance via execution plan analysis. |
+| RAID - Redundant storage configuration for fault tolerance. |
+| REPLICATION - Copies data across nodes for redundancy/availability. |
+| RIGHT JOIN - Returns all right table rows + matched left table rows. |
+| ROLLBACK - Reverts uncommitted transaction changes. |
+| SCHEMA - Logical container for database objects (tables, views). |
+| SELECT - Retrieves data from tables. |
+| Sharding - Horizontal partitioning of data across servers. |
+| SQL - Structured Query Language for managing relational databases. |
+| SUM() - Aggregates sum of column values. |
+| Transaction - Atomic unit of database operations (commit/rollback). |
+| TRIGGER - Automatically executes code on data changes. |
+| UNIQUE Constraint - Ensures column values are distinct. |
+| UPDATE - Modifies existing rows in a table. |
+| VACUUM - Reclaims storage occupied by dead tuples in PostgreSQL. |
+| VIEW - Virtual table defined by a query. |
+| WAL - Write-Ahead Logging for crash recovery. |
+| WHERE - Filters rows based on conditions. |
