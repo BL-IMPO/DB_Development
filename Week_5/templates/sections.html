@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Sections</h1>
+    <div class="sections">
+        {% for section in glossary.keys() %}
+        <a href="{{ url_for('section_terms', section=section) }}">{{ section }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}

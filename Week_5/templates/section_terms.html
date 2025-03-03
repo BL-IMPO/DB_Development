@@ -1,30 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <!--<h1>Glossary of Database Terms</h1>
-    <p class="description">
-        A database is a structured collection of data that is organized for efficient storage, retrieval, and management.
-        This glossary provides definitions for key terms and concepts related to databases and database management systems (DBMS).
-    </p>
-
-    <-- Display all terms grouped by sections --
-    <div class="glossary">
-        {% for section, terms in glossary.items() %}
-        <div class="letter-section">
-            <h2>{{ section }}</h2>
-            {% for term, definition in terms %}
-            <div class="term">
-                <dt>{{ term }}</dt>
-                <dd>{{ definition }}</dd>
-            </div>
-            {% endfor %}
-        </div>
-        {% endfor %}
-    </div>-->
-
-
-<div class="main-content">
-        <h1>Glossary of Database Terms</h1>
+    <h1>{{ section }} Terms</h1>
+    <div class="main-content">
         <p class="description">
             A database is a structured collection of data that is organized for efficient storage, retrieval, and management.
             This glossary provides definitions for key terms and concepts related to databases and database management systems (DBMS).
@@ -88,4 +66,3 @@
         </div>
     </div>
 {% endblock %}
-

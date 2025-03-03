@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Search Terms</h1>
+    <form method="POST">
+        <input type="text" name="search_query" placeholder="Search for terms..." value="{{ search_query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display search results -->
+    {% if results %}
+    <div class="search-results">
+        <h2>Results for "{{ search_query }}"</h2>
+        {% for term, definition, section in results %}
+        <div class="term">
+            <dt>{{ term }} ({{ section }})</dt>
+            <dd>{{ definition }}</dd>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Data Management</h1>
+
+    <!-- Add Term Form -->
+    <h2>Add Term</h2>
+    <form method="POST">
+        <input type="hidden" name="action" value="add">
+        <input type="text" name="term" placeholder="Term" required>
+        <input type="text" name="definition" placeholder="Definition" required>
+        <input type="text" name="section" placeholder="Section" required>
+        <button type="submit">Add Term</button>
+    </form>
+
+    <!-- Delete Term Form -->
+    <h2>Delete Term</h2>
+    <form method="POST">
+        <input type="hidden" name="action" value="delete">
+        <input type="text" name="term_to_delete" placeholder="Term to Delete" required>
+        <input type="text" name="section_to_delete" placeholder="Section" required>
+        <button type="submit">Delete Term</button>
+    </form>
+
+    <!-- Update Term Form -->
+    <h2>Update Term</h2>
+    <form method="POST">
+        <input type="hidden" name="action" value="update">
+        <input type="text" name="old_term" placeholder="Old Term" required>
+        <input type="text" name="new_term" placeholder="New Term" required>
+        <input type="text" name="new_definition" placeholder="New Definition" required>
+        <input type="text" name="section_to_update" placeholder="Section" required>
+        <button type="submit">Update Term</button>
+    </form>
+{% endblock %}
