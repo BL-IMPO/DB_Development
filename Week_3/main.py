@@ -10,11 +10,17 @@ import last_book_id
 
 
 class SetPopup(Popup):
+    def __init__(self):
+        super(SetPopup, self).__init__()
+        self.label = "Physics"
+
+    def on_spinner_select(self, spinner, text):
+        self.label = text
 
     def set_values(self):
         set_values_list = {
             "Author": self.ids.author.text,
-            "Genre": self.ids.genre.text,
+            "Genre": self.label,
             "Year_from": self.ids.year_from.text,
             "Year_to": self.ids.year_to.text,
         }
@@ -35,6 +41,10 @@ class LibraryScreen(Screen):
 
         self.current_books = []
         self.show = []
+        self.current_page = 1
+        self.current_from_element = 0
+        self.current_to_element = 24
+        self.titles = []
 
     def search_book(self):
         popup = SetPopup()
@@ -103,14 +113,37 @@ class LibraryScreen(Screen):
 
         return books
 
-    def show_books(self):
-        if self.show:
-            titles = [f"<{book_id}> [{genre}]| {title}  {year}y.  {pages}p."
-                      for book_id, genre, title, year, pages in self.show]
+    def change_page(self, mode: int):
+        pages_count = max(1, (len(self.titles) + 23) // 24)  # Ensures at least 1 page
+
+        if mode == -1 and self.current_page > 1:  # Go to the previous page
+            self.current_page -= 1
+        elif mode == 1 and self.current_page < pages_count:  # Go to the next page
+            self.current_page += 1
+
+        # Recalculate the range for slicing
+        self.current_from_element = (self.current_page - 1) * 24
+        self.current_to_element = self.current_from_element + 24
+
+        self.ids.page.text = str(self.current_page)
+
+        self.show_page()
+
+    def show_page(self):
+        self.parce_books()
+        # Ensure valid slicing
+        if self.titles:
+            self.ids.scroll.text = "\n\n".join(self.titles[self.current_from_element:self.current_to_element])
         else:
-            titles = [f"<{book_id}> [{genre}]| {title}  {year}y.  {pages}p."
-                      for book_id, genre, title, year, pages in self.current_books]
-        self.ids.scroll.text = "\n\n".join(titles[:250]) if titles != [] else "Not Found"
+            self.ids.scroll.text = "Not Found"
+
+    def parce_books(self):
+        if self.show:
+            self.titles = [f"<{book_id}> [{genre}]| {title}  {year}y.  {pages}p."
+                           for book_id, genre, title, year, pages in self.show]
+        else:
+            self.titles = [f"<{book_id}> [{genre}]| {title}  {year}y.  {pages}p."
+                           for book_id, genre, title, year, pages in self.current_books]
 
     def handle_search_results(self, books):
         query = self.ids.search_quiry.text.lower()
@@ -118,24 +151,25 @@ class LibraryScreen(Screen):
 
         self.current_books = [[book_id, genre, title, year, pages] for book_id, genre, title, year, pages in books if
                               re.match(pattern, title.lower())]
-        self.show_books()
+        self.show_page()
 
     def sort_by(self):
         mode = self.ids.sort_by.text
 
         if "None" in mode:
             self.ids.sort_by.text = "Sort by: Year"
-            self.show = sorted(self.current_books, key=lambda year: year[1])
+            self.show = sorted(self.current_books, key=lambda book: book[3])  # Year is at index 3
         elif "Year" in mode:
             self.ids.sort_by.text = "Sort by: Title"
-            self.show = sorted(self.current_books, key=lambda title: title[0])
+            self.show = sorted(self.current_books, key=lambda book: book[2])  # Title is at index 2
         elif "Title" in mode:
             self.ids.sort_by.text = "Sort by: None"
             self.show = self.current_books
         else:
             print("Can't sort!")
 
-        self.show_books()
+        self.parce_books()
+        self.show_page()
 
 
 class AddScreen(Screen):
@@ -237,7 +271,8 @@ class DeleteScreen(Screen):
             cur.execute(query_all)
             books = cur.fetchall()
 
-            current_books = [[book_id, author, genre, title, year, pages] for book_id, author, genre, title, year, pages in books]
+            current_books = [[book_id, author, genre, title, year, pages] for book_id, author, genre, title, year, pages
+                             in books]
             self.change_labels(current_books)
 
             # changing mode

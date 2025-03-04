@@ -109,10 +109,14 @@ BoxLayout:
         Label:
             text: "Choose a genre"
             color: 0, 0, 0, 1
-        TextInput:
-            id: genre
-            text: "ALL"
-            multiline: False
+
+        Spinner:
+            text: 'Physics'
+            values: ['Engineering', 'Physics', 'Mathematics', 'Science', 'Computer Science']
+            color: 0, 0, 0, 1
+            background_color: 0.96, 0.85, 0.40, 1
+            background_normal: ""
+            on_text: root.on_spinner_select(self, self.text)
 
         # Range of years
         Label:
@@ -215,27 +219,69 @@ BoxLayout:
             size_hint: 0.1, None  # Full width, fixed height
             font_size: 24
             height: "30dp"
-            pos_hint: {"top": 0.85}  # Position just below the search bar
+            pos_hint: {"top": 0.80}  # Position just below the search bar
             color: 0, 0, 0, 1
 
-        Button:
-            id: sort_by
-            text: "Sort by: None"
-            font_size: 18
-            bold: True
-            color: 0, 0, 0, 1
-            background_color: 0.96, 0.85, 0.40, 1  # Warm gold button color
-            background_normal: ""  # Removes default texture
-            border: (10, 10, 10, 10)
-            size_hint: 0.2, None  # Full width, fixed height
-            height: "30dp"
-            pos_hint: {"top": 0.9}  # Position just below the search bar
-            color: 0, 0, 0, 1
-            on_release: root.sort_by()
+        BoxLayout:
+            pos_hint: {"top": 0.9}
+            padding: 5
+            spacing: 10
+            orientation: "horizontal"
+            size_hint: 1, None
+            height: "40dp"  # Reduced height for a cleaner look
+
+            Button:
+                id: sort_by
+                text: "Sort by: None"
+                font_size: 18
+                bold: True
+                color: 0, 0, 0, 1
+                background_color: 0.96, 0.85, 0.40, 1  # Warm gold button color
+                background_normal: ""  # Removes default texture
+                border: (10, 10, 10, 10)
+                size_hint: 0.2, None  # Full width, fixed height
+                height: "30dp"
+                pos_hint: {"top": 0.9}  # Position just below the search bar
+                color: 0, 0, 0, 1
+                on_release: root.sort_by()
+
+            Button:
+                text: "<"
+                font_size: 16
+                bold: True
+                color: 0, 0, 0, 1
+                background_color: 0.96, 0.85, 0.40, 1
+                background_normal: ""
+                border: (10, 10, 10, 10)
+                size_hint: 0.15, None  # Smaller width
+                height: "30dp"
+                on_release: root.change_page(-1)
+
+            TextInput:
+                text: "1"
+                id: page
+                multiline: False
+                size_hint: 0.3, None  # Smaller width
+                height: "30dp"
+                halign: "center"
+                valign: "middle"
+
+            Button:
+                text: ">"
+                font_size: 16
+                bold: True
+                color: 0, 0, 0, 1
+                background_color: 0.96, 0.85, 0.40, 1
+                background_normal: ""
+                border: (10, 10, 10, 10)
+                size_hint: 0.15, None  # Smaller width
+                height: "30dp"
+                on_release: root.change_page(1)
+
 
         # Scrollable Content Area
         ScrollView:
-            size_hint: 1, 0.8  # Take up most of the remaining screen
+            size_hint: 1, 0.75  # Take up most of the remaining screen
             pos_hint: {"left": 0.80}  # Position below the label
 
             Label:
@@ -246,6 +292,7 @@ BoxLayout:
                 padding: 10, 10
                 text: "Not Found"
                 color: 0, 0, 0, 1
+
 <AddScreen>:
     BoxLayout:
         orientation: "vertical"
